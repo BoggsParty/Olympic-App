@@ -1,0 +1,11 @@
+<h1>This is the submit page</h1>
+
+{{ active_sport.sport_name }}
+
+{% block content %}
+    <h1>New post</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}

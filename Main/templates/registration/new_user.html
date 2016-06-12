@@ -1,0 +1,8 @@
+{% block content %}
+    <h1>Complete Your Registration</h1>
+    <p>Only your username will be public, your real name will only be seen by Julia</p>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
