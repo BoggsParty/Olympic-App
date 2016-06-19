@@ -1,11 +1,19 @@
-<h1>This is the submit page</h1>
-
-{{ active_sport.sport_name }}
-
+{% extends 'Main/header.html' %}
 {% block content %}
-    <h1>New post</h1>
+<h1>Select Winners for {{ sport.sport_name }}</h1>
+
+<div>
+    <h2>Your current guesses:</h2>
+        <p><b>Gold-</b></p>
+            <p>{{ userselection.gold }}</p>
+        <p><b>Silver-</b></p>
+            <p>{{ userselection.silver }}</p>
+        <p><b>Bronze-</b></p>
+            <p>{{ userselection.bronze }}</p>
+</div>
+
     <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
+        <br><p>{{ form }}</p></br>
+    <p><button type="submit" class="save btn btn-default">Save</button></p>
     </form>
 {% endblock %}

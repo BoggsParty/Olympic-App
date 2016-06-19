@@ -1,7 +1,14 @@
-<h1>List all Sports</h1>
+{% extends 'Main/header.html' %}
 
-{% for sport in sport %}
+{% block content %}
 
-<h1><a href="/sports/{{sport.sport_slug}}/">{{sport.sport_name}}</a1></h1>
+<div align="center">
+    <h1>List all Sports</h1>
 
-{% endfor %}
+        {% for sport in sport %}
+
+        <br><a href="/sports/{{sport.sport_slug}}/">{{sport.sport_name}}</a1></br>
+
+        {% endfor %}
+</div>
+{% endblock %}

@@ -1,7 +1,31 @@
-<h1>Current Rankings</h1>
+{% extends 'Main/header.html' %}
 
-{% for user in user %}
-<br>{{ user.username }} {{user.score}}</br>
-{% endfor %}
+{% block content %}
+    <body>
+        <div align="center">
+            <h1>Current Rankings</h1>
+        </div>
+        <div align="center">
+            <table style="width:35%">
+                <tr>
+                    <td><p><u>Username</u></p></td>
+                    <td><p><u>Score</u></p></td>
+                </tr>
+                {% for user in user %}                
+                <tr>
+                    <td><p>{{ user.username }}</p></td> 
+                    <td><p>{{user.score}}</p></td>
+                </tr>
+                {% endfor %}                
+            </table>
+            
+        </div>
+        
+        <div class="footer">
+            {% for sport in sport %}
+                <a href="/sports/{{sport.sport_slug}}/"> {{sport.sport_name}} | </a1>
+            {% endfor %}
 
-<p><a href="/sports/">Click Here to View All Sports</a1></p>
+        </div>
+    </body>
+{% endblock %}

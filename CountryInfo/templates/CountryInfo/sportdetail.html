@@ -1,18 +1,32 @@
-<h1>{{ sport.sport_name }}</h1>
+{% extends 'Main/header.html' %}
 
-<p>{{ sport.sport_description }}</p>
+{% block content %}
 
-<br><b>Participating Athletes:</b></br>
-{% for athlete in sport.athlete.all %}
-    <br>{{athlete.athlete_full_name}} {{athlete.country}}</br>
-{% endfor %}
+<div>
+    <h1>What is {{ sport.sport_name }}?</h1>
+        <p>{{ sport.sport_description|linebreaks }}</p>
+    <h2>How is the winner chosen?</h2>
+        <p>{{ sport.scoring|linebreaks }}</p>
+    <h2>Who's going to win?</h2>
+        <p>{{ sport.favorite|linebreaks }}</p>
+    <h2>When to watch</h2>
+        <p>{{ sport.competition_dates|linebreaks }}</p>
+</div>
 
+<div id="section3">
+    <img src="{{sport.image}}" alt="Mountain View" style="width:640px;height:360px;">
+</div>
+<div>
+    <h1>Your current guesses:</h1>
+        <p><b>Gold-</b></p>
+            <p>{{ userselection.gold }}</p>
+        <p><b>Silver-</b></p>
+            <p>{{ userselection.silver }}</p>
+        <p><b>Bronze-</b></p>
+            <p>{{ userselection.bronze }}</p>
+</div>
+<div>
+        <p><a href="/submit/{{sport.sport_slug}}/">Click Here to Submit or Change Guess</a></p>
+</div>
 
-<p><b>Your current guesses:</b></p>
-<p>Gold-</p>
-{{ userselection.gold_medal_winner }}
-<p>Silver-</p>
-{{ userselection.silver_medal_winner }}
-<p>Bronze-</p>
-{{ userselection.bronze_medal_winner }}
-<p><a href="/submit/{{sport.sport_slug}}/">Click Here to Submit or Change Guess</a></p>
+{% endblock %}
