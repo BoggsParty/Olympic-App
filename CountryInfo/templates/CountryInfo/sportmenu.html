@@ -3,11 +3,11 @@
 {% block content %}
 
 <div align="center">
-    <h1>List all Sports</h1>
+    <h1>All Sports</h1>
 
         {% for sport in sport %}
 
-        <br><a href="/sports/{{sport.sport_slug}}/">{{sport.sport_name}}</a1></br>
+        <br><a class="link1" href="/sports/{{sport.sport_slug}}/">{{sport.sport_name}}</a1></br>
 
         {% endfor %}
 </div>

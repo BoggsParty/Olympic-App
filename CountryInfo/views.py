@@ -6,7 +6,7 @@ from django.db.models import Q
 
 @login_required
 def menu(request):
-    sport = Sport.objects.all()
+    sport = Sport.objects.order_by('order')
     return render(request, 'CountryInfo/sportmenu.html', {'sport': sport})
  
 @login_required 

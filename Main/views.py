@@ -40,7 +40,7 @@ def view_all(request):
 @login_required
 def dashboard(request):
     user = Ranking.objects.all().order_by('-score')
-    sport = Sport.objects.all()
+    sport = Sport.objects.order_by('order')
     return render(request, 'Main/dashboard.html', {'user': user, 'sport': sport})
 
 @login_required
@@ -56,7 +56,7 @@ def adduser(request):
     else:
         form = RankingsForm()
     return render(request, 'registration/new_user.html', {'form': form})
-
+    
 def reset_password(request):
     if request.method == "POST":
         form = PasswordForm(request.POST)
@@ -70,7 +70,7 @@ def reset_password(request):
     return render(request, 'registration/password_reset1.html', {'form': form}) 
 
 def password_confirmation(request):
-    return render(request, 'registration/password_reset2.html')
+    return render(request, 'registration/create_account_success.html')
 
 def retrieve_username(request):
     if request.method == "POST":
@@ -86,8 +86,15 @@ def retrieve_username(request):
 
 def retrieve_username_confirmation(request):
     return render(request, 'registration/retrieve_username2.html')  
-    
+
+def create_account_success(request):
+    return render(request, 'registration/create_account_success.html')    
+
 @login_required
+def account_settings(request):
+        return render(request, 'registration/account-settings.html')
+
+
 #def create_choice_record(request):
    # user = Ranking.objects.filter(user=request.user).filter(user=request.user).order_by('-id')[0]
    # if request.method == "POST":

@@ -29,6 +29,22 @@ a {
     text-align: center;
 }
 
+#link1 {
+    color: #008040;
+    font-family: Georgia, serif;
+    font-size: 175%;
+    text-decoration: none;
+    padding-left: 50px;
+}
+
+#link2 {
+    color: #008040;
+    font-family: Georgia, serif;
+    font-size: 150%;
+    text-decoration: none;
+    text-align: center;
+}
+
 #section1 {
     width:350px;
     float:left;
@@ -125,7 +141,6 @@ table {
 }
 
 th, td {
-    padding: 8px;
     border-bottom: 1px solid #ddd;
 }
 

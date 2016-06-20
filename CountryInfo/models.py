@@ -10,6 +10,7 @@ class Country(models.Model):
 class Sport(models.Model):
     sport_name = models.CharField(max_length=200, default='')
     sport_slug = models.SlugField(max_length=50, default='')
+    order = models.IntegerField(default=100)
     sport_description = models.TextField(default='Sport Description')
     scoring = models.TextField(default='score')
     favorite = models. TextField(default='favorites')

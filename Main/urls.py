@@ -15,9 +15,11 @@ url(r'^password-confirmation/', views.password_confirmation, name='password_conf
 url(r'^retrieve-username/', views.retrieve_username, name='retrieve_username'),
 url(r'^retrieve-username-confirmation/', views.retrieve_username_confirmation, name='username_confirmation'),
 url(r'^', include('django.contrib.auth.urls')),
+url(r'^successful/', views.create_account_success, name='create_account_success'),
+#url(r'^account-settings/', views.account_settings, name='account_settings'),
 url('^create-account/', CreateView.as_view(
         template_name='registration/createaccount.html',
         form_class=UserCreationForm,
-        success_url='/register/'
+        success_url='/successful/'
     )),
 ]
