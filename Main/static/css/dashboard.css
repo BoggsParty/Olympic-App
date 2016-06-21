@@ -45,6 +45,15 @@ a {
     text-align: center;
 }
 
+#link3 {
+    color: #008040;
+    font-family: Georgia, serif;
+    font-size: 250%;
+    text-decoration: none;
+    text-align: center;
+}
+
+
 #section1 {
     width:350px;
     float:left;
@@ -125,7 +134,7 @@ a {
 }
 
 .footer {
-  position: static;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
@@ -138,6 +147,11 @@ a {
 table {
     border-collapse: collapse;
     width: 100%;
+}
+
+#tablelogin {
+    border-collapse: collapse;
+    width: 20%; 
 }
 
 th, td {

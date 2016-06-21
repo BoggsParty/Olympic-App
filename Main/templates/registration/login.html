@@ -1,47 +1,46 @@
+{% extends 'Main/header.html' %}
+
 {% block content %}
 
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+    {% if form.errors %}
 
-{% if next %}
-    {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
-    {% else %}
-    <p>Please login to see this page.</p>
+        <p>Your username and password didn't match. Please try again.</p>
     {% endif %}
-{% endif %}
 
-<form method="post" action="{% url 'django.contrib.auth.views.login' %}">
-{% csrf_token %}
-<table>
-<tr>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
-</tr>
-<tr>
-    <td>{{ form.password.label_tag }}</td>
-    <td>{{ form.password }}</td>
-</tr>
-</table>
+    {% if next %}
+        {% if user.is_authenticated %}
+            <p>Your account doesn't have access to this page. To proceed,
+            please login with an account that has access.</p>
+        {% else %}
+            <h1 align="center">Please login to see this page</h1>
+        {% endif %}
+    {% endif %}
 
-<input type="submit" value="login" />
-<input type="hidden" name="next" value="{{ next }}" />
-</form>
+    <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+            {% csrf_token %}
+        <div align="center">
+            <table id="tablelogin" align="center">
+                <tr>
+                    <td align="center">{{ form.username.label_tag }}</td>
+                    <td align="center">{{ form.username }}</td>
+                </tr>
+                <tr>
+                    <td align="center">{{ form.password.label_tag }}</td>
+                    <td align="center">{{ form.password }}</td>
+                </tr>
+            </table>
 
+            <h2><input type="submit" value="login" /></h2>
+            <input type="hidden" name="next" value="{{ next }}" />
+        </div>
+    </form>
+
+    <div align="center">
+        <br><a id="link3" href="/create-account/">Create an Account</a></br>
+
+        <br><a id="link3" href="/reset-password/">Forgot Password?</a></br>
+
+        <br><a id="link3" href="/retrieve-username/">Forgot Username?</a></br>
+    </div>
 {% endblock %}
-<p>Click
-
-<a href="/create-account/">here</a>
-to create an account</p>
-
-<p>Click
-<a href="/reset-password/"> here </a>
-if you forgot your password</p>
-
-<p>Click
-<a href="/retrieve-username/"> here </a>
-if you forgot your username</p>
-
 

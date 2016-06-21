@@ -1,8 +1,9 @@
-<h1 align="center"><font  color="#bb3344">Your account has been created. Please click
-    <a align="center" href="/register/"><font  color="#008040">here</font></a>
-to login and finish registration.</font></h1>
+{% extends 'Main/header.html' %}
 
-
-
-
+{% block content %}
+    <div align="center">
+        <h1>Your account has been created.</h1>
+        <a id="link3" href="/register/">Please click here to login and complete registration!</a>
+    </div>
+{% endblock %}
 
