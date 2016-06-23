@@ -38,10 +38,37 @@ a {
 #link1 {
     color: #008040;
     font-family: Georgia, serif;
-    font-size: 400%;
+    font-size: 24pt;
     text-decoration: none;
     padding-left: 50px;
 }
+
+.button1 {
+    background-color: #008040; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button2 {
+    background-color: #008040; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 4px 50px;
+    cursor: pointer;
+}
+
+.button3 {background-color: #008040;}
 
 #link2 {
     color: #008040;
