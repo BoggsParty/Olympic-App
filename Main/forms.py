@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm, PasswordInput
-from .models import PasswordReset, LostUserName
+from .models import PasswordReset, LostUserName, Suggestions
 from django.contrib.auth.models import User
 
 class UserForm(forms.ModelForm):
@@ -18,3 +18,8 @@ class LostUserNameForm(forms.ModelForm):
     class Meta:
         model = LostUserName
         fields = ('first_name', 'last_name', 'email',)
+        
+class SuggestionsForm(forms.ModelForm):
+    class Meta:
+        model = Suggestions
+        fields = ('suggestion',)

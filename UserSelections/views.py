@@ -8,7 +8,7 @@ from django.db.models import Q
 
 @login_required
 def selection_eventing(request):
-    userselection = eventingSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = eventingSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='eventing')
         
     if request.method == "POST":
@@ -25,7 +25,7 @@ def selection_eventing(request):
 
 @login_required
 def selection_womens_all_around_gymnastics(request):
-    userselection = womens_all_around_gymnasticsSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = womens_all_around_gymnasticsSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='womens-all-around-gymnastics')
         
     if request.method == "POST":
@@ -42,7 +42,7 @@ def selection_womens_all_around_gymnastics(request):
 
 @login_required
 def selection_mens_all_around_gymnastics(request):
-    userselection = mens_all_around_gymnasticsSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = mens_all_around_gymnasticsSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-all-around-gymnastics')
         
     if request.method == "POST":
@@ -59,7 +59,7 @@ def selection_mens_all_around_gymnastics(request):
     
 @login_required
 def selection_womens_track_4x100_relay(request):
-    userselection = womens_track_4x100_relaySelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = womens_track_4x100_relaySelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='womens-track-4x100-relay')
         
     if request.method == "POST":
@@ -76,7 +76,7 @@ def selection_womens_track_4x100_relay(request):
 
 @login_required
 def selection_mens_track_4x100_relay(request):
-    userselection = mens_track_4x100_relaySelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = mens_track_4x100_relaySelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-track-4x100-relay')
         
     if request.method == "POST":
@@ -93,7 +93,7 @@ def selection_mens_track_4x100_relay(request):
 
 @login_required
 def selection_womens_decathalon(request):
-    userselection = womens_decathalonSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = womens_decathalonSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='womens-decathalon')
         
     if request.method == "POST":
@@ -110,7 +110,7 @@ def selection_womens_decathalon(request):
 
 @login_required
 def selection_mens_decathalon(request):
-    userselection = mens_decathalonSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = mens_decathalonSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-decathalon')
         
     if request.method == "POST":
@@ -127,7 +127,7 @@ def selection_mens_decathalon(request):
     
 @login_required
 def selection_womens_swimming_4x100_medley_relay(request):
-    userselection = womens_swimming_4x100_medley_relaySelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = womens_swimming_4x100_medley_relaySelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='womens-swimming-4x100-medley-relay')
         
     if request.method == "POST":
@@ -144,7 +144,7 @@ def selection_womens_swimming_4x100_medley_relay(request):
 
 @login_required
 def selection_mens_swimming_4x100_medley_relay(request):
-    userselection = mens_swimming_4x100_medley_relaySelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = mens_swimming_4x100_medley_relaySelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-swimming-4x100-medley-relay')
         
     if request.method == "POST":
@@ -161,7 +161,7 @@ def selection_mens_swimming_4x100_medley_relay(request):
 
 @login_required
 def selection_womens_swimming_200m_backstroke(request):
-    userselection = womens_swimming_200m_backstrokeSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = womens_swimming_200m_backstrokeSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='womens-swimming-200m-backstroke')
         
     if request.method == "POST":
@@ -179,7 +179,7 @@ def selection_womens_swimming_200m_backstroke(request):
 @login_required
 
 def selection_mens_swimming_1500m_freestyle(request):
-    userselection = mens_swimming_1500m_freestyleSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = mens_swimming_1500m_freestyleSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-swimming-1500m-freestyle')
         
     if request.method == "POST":
@@ -196,7 +196,7 @@ def selection_mens_swimming_1500m_freestyle(request):
 
 @login_required
 def selection_mens_golf(request):
-    userselection = mens_golfSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = mens_golfSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-golf')
         
     if request.method == "POST":
@@ -213,7 +213,7 @@ def selection_mens_golf(request):
 
 @login_required
 def selection_womens_basketball(request):
-    userselection = womens_basketballSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = womens_basketballSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='womens-basketball')
         
     if request.method == "POST":
@@ -230,7 +230,7 @@ def selection_womens_basketball(request):
 
 @login_required
 def selection_womens_soccer(request):
-    userselection = womens_soccerSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = womens_soccerSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='womens-soccer')
         
     if request.method == "POST":
@@ -247,7 +247,7 @@ def selection_womens_soccer(request):
 
 @login_required
 def selection_mens_soccer(request):
-    userselection = mens_soccerSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = mens_soccerSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-soccer')
         
     if request.method == "POST":
@@ -264,7 +264,7 @@ def selection_mens_soccer(request):
 
 @login_required
 def selection_womens_beach_volleyball(request):
-    userselection = womens_beach_volleyballSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = womens_beach_volleyballSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='womens-beach-volleyball')
         
     if request.method == "POST":
@@ -281,7 +281,7 @@ def selection_womens_beach_volleyball(request):
 
 @login_required
 def selection_mens_waterpolo(request):
-    userselection = mens_waterpoloSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = mens_waterpoloSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-waterpolo')
         
     if request.method == "POST":
@@ -298,7 +298,7 @@ def selection_mens_waterpolo(request):
 
 @login_required
 def selection_womens_bmx(request):
-    userselection = womens_bmxSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = womens_bmxSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='womens-bmx')
         
     if request.method == "POST":
@@ -315,7 +315,7 @@ def selection_womens_bmx(request):
 
 @login_required
 def selection_mens_bmx(request):
-    userselection = mens_bmxSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = mens_bmxSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-bmx')
         
     if request.method == "POST":
@@ -332,7 +332,7 @@ def selection_mens_bmx(request):
 
 @login_required    
 def selection_mens_handball(request):
-    userselection = mens_handballSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).order_by('-id')[0]
+    userselection = mens_handballSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-handball')
         
     if request.method == "POST":

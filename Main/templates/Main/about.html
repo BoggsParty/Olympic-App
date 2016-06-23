@@ -1,0 +1,49 @@
+{% extends 'Main/header.html' %}
+
+{% block content %}
+
+<div>
+    <h2>What is happening here?</h2>
+        <p>This is a website for my friends and family to have a little competition to see who can make the best guesses for a few sport events at the Olympics. This is also the first website I have ever made. </p>
+    <h2>Why?</h2>
+        <p>Mostly I did this to practice making a website and to get people more interested in the Summer Olympics. </p>
+    <h2>What is the prize?</h2>
+        <p><b>1st Place:</b> 
+        Ownership of the Champion trophy until the Winter Olympics, a first place medal to keep, 1 trip with Julia to the aquarium (redeem by April 20th, 2017) and dinner with Julia at a restaurant of your choosing with a $$ or less on Yelp.
+        <br><b>2nd Place:</b> 
+        A second place medal to keep and 1 trip with Julia to the Shedd Aquarium (redeem by April 20th, 2017)
+        <br><b>3rd Place:</b>
+        A third place medal to keep
+        </p>
+    <h2>How does scoring work?</h2>
+        <p><b>1 exactly correct guess:</b> 
+            10pts
+        <br><b>2 exactly correct guesses:</b>
+            25pts
+        <br><b>3 exactly correct guesses:</b> 
+            50pts
+        <br><b>Choosing a winning team but not the correct place:</b>
+            5 pts
+        </p>
+        
+    <h2>When is the deadline?</h2>
+        <p>All guesses must be made by 11:59 CST on August 5th (the day of the Opening Ceremony)
+        Scores will be updated within 24hrs of the medal rounds for each events.</p>
+
+    <h2>Who chose the sports?</h2>
+        <p>I did, trying to keep a good mix of team and individual sports, popular sports and interesting sports.</p>
+
+</div>
+<div>
+    <a id="link1" href="/dashboard/" >Click here to get started</a>
+</div>
+<br>
+<div align="center">
+        <h2>Please use this form to submit any comments or suggestions</h2>
+        <p><b>For site issues or help, please contact Julia.</b></p>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+        <h2><input type="submit" value="Submit" /></h2>
+</div>
+
+{% endblock %}

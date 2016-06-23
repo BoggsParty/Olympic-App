@@ -11,3 +11,7 @@ class LostUserName(models.Model):
     last_name = models.CharField(max_length=200, default='')
     email = models.EmailField(max_length=200, default='')
     date = models.DateTimeField(default=timezone.now)
+    
+class Suggestions(models.Model):
+    suggestion = models.TextField(default='')
+    user = models.ForeignKey('auth.User', blank=True, null=True)

@@ -41,7 +41,8 @@ class mens_all_around_gymnasticsSelection (models.Model):
     gold = models.ForeignKey(mens_all_around_gymnasticsOptions,blank=True, null=True, related_name = 'gold+')
     silver = models.ForeignKey(mens_all_around_gymnasticsOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(mens_all_around_gymnasticsOptions,blank=True, null=True, related_name = 'bronze+')
-
+    date_created = models.DateTimeField(default=timezone.now)
+    
 class womens_track_4x100_relayOptions (models.Model):
     athlete_name = models.CharField(max_length=200, default='')
     def __str__(self):
@@ -54,7 +55,8 @@ class womens_track_4x100_relaySelection (models.Model):
     gold = models.ForeignKey(womens_track_4x100_relayOptions,blank=True, null=True, related_name = 'gold+')
     silver = models.ForeignKey(womens_track_4x100_relayOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(womens_track_4x100_relayOptions,blank=True, null=True, related_name = 'bronze+')
-
+    date_created = models.DateTimeField(default=timezone.now)
+    
 class mens_track_4x100_relayOptions (models.Model):
     athlete_name = models.CharField(max_length=200, default='')
     def __str__(self):
@@ -67,7 +69,8 @@ class mens_track_4x100_relaySelection (models.Model):
     gold = models.ForeignKey(mens_track_4x100_relayOptions,blank=True, null=True, related_name = 'gold+')
     silver = models.ForeignKey(mens_track_4x100_relayOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(mens_track_4x100_relayOptions,blank=True, null=True, related_name = 'bronze+')
-
+    date_created = models.DateTimeField(default=timezone.now)
+    
 class womens_decathalonOptions (models.Model):
     athlete_name = models.CharField(max_length=200, default='')
     def __str__(self):
@@ -80,7 +83,8 @@ class womens_decathalonSelection (models.Model):
     gold = models.ForeignKey(womens_decathalonOptions,blank=True, null=True, related_name = 'gold+')
     silver = models.ForeignKey(womens_decathalonOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(womens_decathalonOptions,blank=True, null=True, related_name = 'bronze+')
-
+    date_created = models.DateTimeField(default=timezone.now)
+    
 class mens_decathalonOptions (models.Model):
     athlete_name = models.CharField(max_length=200, default='')
     def __str__(self):
@@ -93,7 +97,8 @@ class mens_decathalonSelection (models.Model):
     gold = models.ForeignKey(mens_decathalonOptions,blank=True, null=True, related_name = 'gold+')
     silver = models.ForeignKey(mens_decathalonOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(mens_decathalonOptions,blank=True, null=True, related_name = 'bronze+')
-
+    date_created = models.DateTimeField(default=timezone.now)
+    
 class womens_swimming_4x100_medley_relayOptions (models.Model):
     athlete_name = models.CharField(max_length=200, default='')
     def __str__(self):
@@ -106,6 +111,7 @@ class womens_swimming_4x100_medley_relaySelection (models.Model):
     gold = models.ForeignKey(womens_swimming_4x100_medley_relayOptions,blank=True, null=True, related_name = 'gold+')
     silver = models.ForeignKey(womens_swimming_4x100_medley_relayOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(womens_swimming_4x100_medley_relayOptions,blank=True, null=True, related_name = 'bronze+')
+    date_created = models.DateTimeField(default=timezone.now)
     
 class mens_swimming_4x100_medley_relayOptions (models.Model):
     athlete_name = models.CharField(max_length=200, default='')
@@ -119,7 +125,8 @@ class mens_swimming_4x100_medley_relaySelection (models.Model):
     gold = models.ForeignKey(mens_swimming_4x100_medley_relayOptions,blank=True, null=True, related_name = 'gold+')
     silver = models.ForeignKey(mens_swimming_4x100_medley_relayOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(mens_swimming_4x100_medley_relayOptions,blank=True, null=True, related_name = 'bronze+')
-
+    date_created = models.DateTimeField(default=timezone.now)
+    
 class womens_swimming_200m_backstrokeOptions (models.Model):
     athlete_name = models.CharField(max_length=200, default='')
     def __str__(self):
@@ -132,6 +139,7 @@ class womens_swimming_200m_backstrokeSelection (models.Model):
     gold = models.ForeignKey(womens_swimming_200m_backstrokeOptions,blank=True, null=True, related_name = 'gold+')
     silver = models.ForeignKey(womens_swimming_200m_backstrokeOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(womens_swimming_200m_backstrokeOptions,blank=True, null=True, related_name = 'bronze+')
+    date_created = models.DateTimeField(default=timezone.now)
     
 class mens_swimming_1500m_freestyleOptions (models.Model):
     athlete_name = models.CharField(max_length=200, default='')
@@ -145,6 +153,7 @@ class mens_swimming_1500m_freestyleSelection (models.Model):
     gold = models.ForeignKey(mens_swimming_1500m_freestyleOptions,blank=True, null=True, related_name = 'gold+')
     silver = models.ForeignKey(mens_swimming_1500m_freestyleOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(mens_swimming_1500m_freestyleOptions,blank=True, null=True, related_name = 'bronze+')
+    date_created = models.DateTimeField(default=timezone.now)
     
 class mens_golfOptions (models.Model):
     athlete_name = models.CharField(max_length=200, default='')
@@ -158,6 +167,7 @@ class mens_golfSelection (models.Model):
     gold = models.ForeignKey(mens_golfOptions,blank=True, null=True, related_name = 'gold+')
     silver = models.ForeignKey(mens_golfOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(mens_golfOptions,blank=True, null=True, related_name = 'bronze+')
+    date_created = models.DateTimeField(default=timezone.now)
     
 class womens_basketballOptions (models.Model):
     athlete_name = models.CharField(max_length=200, default='')
@@ -171,6 +181,7 @@ class womens_basketballSelection (models.Model):
     gold = models.ForeignKey(womens_basketballOptions,blank=True, null=True, related_name = 'gold+')
     silver = models.ForeignKey(womens_basketballOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(womens_basketballOptions,blank=True, null=True, related_name = 'bronze+')
+    date_created = models.DateTimeField(default=timezone.now)
     
 class womens_soccerOptions (models.Model):
     athlete_name = models.CharField(max_length=200, default='')
@@ -184,6 +195,7 @@ class womens_soccerSelection (models.Model):
     gold = models.ForeignKey(womens_soccerOptions,blank=True, null=True, related_name = 'gold+')
     silver = models.ForeignKey(womens_soccerOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(womens_soccerOptions,blank=True, null=True, related_name = 'bronze+')
+    date_created = models.DateTimeField(default=timezone.now)
     
 class mens_soccerOptions (models.Model):
     athlete_name = models.CharField(max_length=200, default='')
@@ -197,6 +209,7 @@ class mens_soccerSelection (models.Model):
     gold = models.ForeignKey(mens_soccerOptions,blank=True, null=True, related_name = 'gold+')
     silver = models.ForeignKey(mens_soccerOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(mens_soccerOptions,blank=True, null=True, related_name = 'bronze+')
+    date_created = models.DateTimeField(default=timezone.now)
     
 class womens_beach_volleyballOptions (models.Model):
     athlete_name = models.CharField(max_length=200, default='')
@@ -210,6 +223,7 @@ class womens_beach_volleyballSelection (models.Model):
     gold = models.ForeignKey(womens_beach_volleyballOptions,blank=True, null=True, related_name = 'gold+')
     silver = models.ForeignKey(womens_beach_volleyballOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(womens_beach_volleyballOptions,blank=True, null=True, related_name = 'bronze+')
+    date_created = models.DateTimeField(default=timezone.now)
     
 class mens_waterpoloOptions (models.Model):
     athlete_name = models.CharField(max_length=200, default='')
@@ -223,6 +237,7 @@ class mens_waterpoloSelection (models.Model):
     gold = models.ForeignKey(mens_waterpoloOptions,blank=True, null=True, related_name = 'gold+')
     silver = models.ForeignKey(mens_waterpoloOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(mens_waterpoloOptions,blank=True, null=True, related_name = 'bronze+')
+    date_created = models.DateTimeField(default=timezone.now)
     
 class womens_bmxOptions (models.Model):
     athlete_name = models.CharField(max_length=200, default='')
@@ -236,6 +251,7 @@ class womens_bmxSelection (models.Model):
     gold = models.ForeignKey(womens_bmxOptions,blank=True, null=True, related_name = 'gold+')
     silver = models.ForeignKey(womens_bmxOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(womens_bmxOptions,blank=True, null=True, related_name = 'bronze+')
+    date_created = models.DateTimeField(default=timezone.now)
     
 class mens_bmxOptions (models.Model):
     athlete_name = models.CharField(max_length=200, default='')
@@ -249,6 +265,7 @@ class mens_bmxSelection (models.Model):
     gold = models.ForeignKey(mens_bmxOptions,blank=True, null=True, related_name = 'gold+')
     silver = models.ForeignKey(mens_bmxOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(mens_bmxOptions,blank=True, null=True, related_name = 'bronze+')
+    date_created = models.DateTimeField(default=timezone.now)
     
 class mens_handballOptions (models.Model):
     athlete_name = models.CharField(max_length=200, default='')
@@ -262,3 +279,4 @@ class mens_handballSelection (models.Model):
     gold = models.ForeignKey(mens_handballOptions,blank=True, null=True, related_name = 'gold+')
     silver = models.ForeignKey(mens_handballOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(mens_handballOptions,blank=True, null=True, related_name = 'bronze+')
+    date_created = models.DateTimeField(default=timezone.now)
