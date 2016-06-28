@@ -2,23 +2,24 @@
 
 {% block content %}
     <body>
-        <div align="center">
-            <h1>Current Rankings</h1>
-        </div>
-        <div align="center">
-            <table style="width:35%">
-                <tr>
-                    <td><p><u>Username</u></p></td>
-                    <td><p><u>Score</u></p></td>
-                </tr>
-                {% for user in user %}                
-                <tr>
-                    <td><p>{{ user.username }}</p></td> 
-                    <td><p>{{user.score}}</p></td>
-                </tr>
-                {% endfor %}                
-            </table>
-            
+        <div class="page-wrap">
+            <div align="center">
+                <h1>Current Rankings</h1>
+            </div>
+            <div align="center">
+                <table style="width:35%">
+                    <tr>
+                        <td><p><u>Username</u></p></td>
+                        <td><p><u>Score</u></p></td>
+                    </tr>
+                    {% for user in user %}                
+                    <tr>
+                        <td><p>{{ user.username }}</p></td> 
+                        <td><p>{{user.score}}</p></td>
+                    </tr>
+                    {% endfor %}                
+                </table>
+            </div>
         </div>
     </body>
       
