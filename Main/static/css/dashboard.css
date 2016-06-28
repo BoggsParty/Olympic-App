@@ -43,6 +43,10 @@ a {
     padding-left: 50px;
 }
 
+.page-wrap:after {
+  content: "";
+  display: block;
+}
 .site-footer, .page-wrap:after {
   height: 60px; 
 }
