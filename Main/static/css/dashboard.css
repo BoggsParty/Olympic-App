@@ -42,7 +42,17 @@ a {
     text-decoration: none;
     padding-left: 50px;
 }
-
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -60px; 
+}
 .page-wrap:after {
   content: "";
   display: block;
