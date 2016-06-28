@@ -43,6 +43,13 @@ a {
     padding-left: 50px;
 }
 
+.site-footer, .page-wrap:after {
+  height: 50px; 
+}
+.site-footer {
+  background: #e3e3e3;
+}
+
 .button1 {
     background-color: #008040; /* Green */
     border: none;
@@ -86,6 +93,13 @@ a {
     text-align: center;
 }
 
+#link4 {
+    color: #008040;
+    font-family: Georgia, serif;
+    font-size: 150%;
+    text-decoration: none;
+    text-align: center;
+}
 
 #section1 {
     width:350px;
@@ -137,17 +151,6 @@ a {
     color: white;
 }
 
-
-.footer {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  background-color: #efefef;
-  text-align: center;
-  font-size: 12px;
-}
 
 table {
     border-collapse: collapse;

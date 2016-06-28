@@ -20,12 +20,12 @@
             </table>
             
         </div>
-        
-        <div class="footer">
-            {% for sport in sport %}
-                <a href="/sports/{{sport.sport_slug}}/"> {{sport.sport_name}} | </a1>
-            {% endfor %}
-
-        </div>
     </body>
+      
+        <div class="site-footer">
+            {% for sport in sport %}
+                <a id="link4" href="/sports/{{sport.sport_slug}}/"> {{sport.sport_name}} | </a>
+            {% endfor %}
+        </div>    
+    
 {% endblock %}
