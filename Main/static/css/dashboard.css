@@ -27,6 +27,12 @@ p {
     font-size: 150%;
     padding: 0px 50px;
 }
+
+#p3 {
+    color: #4c4b44;
+    font-family: sans-serif;
+    font-size: 14px;
+}
 a {
     color: #008040;
     font-family: Georgia, serif;
@@ -115,6 +121,13 @@ html, body {
     text-align: center;
 }
 
+#link5 {
+    color: #008040;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: left;
+}
 #section1 {
     width:350px;
     float:left;

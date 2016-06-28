@@ -23,6 +23,8 @@ class Sport(models.Model):
     )
     winner_type = models.CharField(max_length=2, choices=WINNER_TYPE, default=TEAM)
     image = models.URLField(max_length=200, blank=True, default='')
+    source_link = models.URLField(max_length=200, blank=True, default='')
+    source_text = models.CharField(max_length=200, blank=True, default='')
     def __str__(self):
         return self.sport_name
         
