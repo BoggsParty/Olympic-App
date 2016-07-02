@@ -1,5 +1,5 @@
 from django import forms
-from .models import eventingSelection, womens_all_around_gymnasticsSelection, mens_all_around_gymnasticsSelection, womens_track_4x100_relaySelection, mens_track_4x100_relaySelection, womens_decathalonSelection, mens_decathalonSelection, womens_swimming_4x100_medley_relaySelection, mens_swimming_4x100_medley_relaySelection, womens_swimming_200m_backstrokeSelection, mens_swimming_1500m_freestyleSelection, mens_golfSelection, womens_basketballSelection, womens_soccerSelection, mens_soccerSelection, womens_beach_volleyballSelection, mens_waterpoloSelection, womens_bmxSelection, mens_bmxSelection, mens_handballSelection
+from .models import eventingSelection, womens_all_around_gymnasticsSelection, mens_all_around_gymnasticsSelection, womens_track_4x100_relaySelection, mens_track_4x100_relaySelection, womens_decathalonSelection, mens_decathalonSelection, womens_swimming_4x100_medley_relaySelection, mens_swimming_4x100_medley_relaySelection, womens_swimming_200m_backstrokeSelection, mens_swimming_1500m_freestyleSelection, mens_golfSelection, womens_basketballSelection, womens_soccerSelection, mens_soccerSelection, womens_beach_volleyballSelection, mens_waterpoloSelection, womens_bmxSelection, mens_bmxSelection, mens_handballSelection, show_jumpingSelection
 
 class eventingSelectionForm(forms.ModelForm):
     class Meta:
@@ -99,4 +99,9 @@ class mens_bmxSelectionForm(forms.ModelForm):
 class mens_handballSelectionForm(forms.ModelForm):
     class Meta:
         model = mens_handballSelection
+        fields = ('gold', 'silver', 'bronze')
+        
+class show_jumpingSelectionForm(forms.ModelForm):
+    class Meta:
+        model = show_jumpingSelection
         fields = ('gold', 'silver', 'bronze')

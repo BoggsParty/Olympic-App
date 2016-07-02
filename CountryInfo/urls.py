@@ -23,4 +23,5 @@ url(r'^mens-waterpolo/$', views.mens_waterpolo_detail, name='mens_waterpolo_deta
 url(r'^womens-bmx/$', views.womens_bmx_detail, name='womens_bmx_detail'),
 url(r'^mens-bmx/$', views.mens_bmx_detail, name='mens_bmx_detail'),
 url(r'^mens-handball/$', views.mens_handball_detail, name='mens_handball_detail'),
+url(r'^show-jumping/$', views.show_jumping_detail, name='show_jumping_detail'),
 ]

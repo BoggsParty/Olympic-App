@@ -280,3 +280,17 @@ class mens_handballSelection (models.Model):
     silver = models.ForeignKey(mens_handballOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(mens_handballOptions,blank=True, null=True, related_name = 'bronze+')
     date_created = models.DateTimeField(default=timezone.now)
+    
+class show_jumpingOptions (models.Model):
+    athlete_name = models.CharField(max_length=200, default='')
+    def __str__(self):
+        return self.athlete_name
+
+class show_jumpingSelection (models.Model):
+    sport_name = models.CharField(max_length=200, default='show-jumping')
+    user = models.ForeignKey('auth.User', blank=True, null=True)
+    place = models.CharField(max_length=200, default='none')
+    gold = models.ForeignKey(show_jumpingOptions,blank=True, null=True, related_name = 'gold+')
+    silver = models.ForeignKey(show_jumpingOptions,blank=True, null=True, related_name = 'silver+')
+    bronze = models.ForeignKey(show_jumpingOptions,blank=True, null=True, related_name = 'bronze+')
+    date_created = models.DateTimeField(default=timezone.now)

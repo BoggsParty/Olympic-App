@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render, redirect
-from .models import eventingSelection, womens_all_around_gymnasticsSelection, mens_all_around_gymnasticsSelection, womens_track_4x100_relaySelection, mens_track_4x100_relaySelection, womens_decathalonSelection, mens_decathalonSelection, womens_swimming_4x100_medley_relaySelection, mens_swimming_4x100_medley_relaySelection, womens_swimming_200m_backstrokeSelection, mens_swimming_1500m_freestyleSelection, mens_golfSelection, womens_basketballSelection, womens_soccerSelection, mens_soccerSelection, womens_beach_volleyballSelection, mens_waterpoloSelection, womens_bmxSelection, mens_bmxSelection, mens_handballSelection
+from .models import eventingSelection, womens_all_around_gymnasticsSelection, mens_all_around_gymnasticsSelection, womens_track_4x100_relaySelection, mens_track_4x100_relaySelection, womens_decathalonSelection, mens_decathalonSelection, womens_swimming_4x100_medley_relaySelection, mens_swimming_4x100_medley_relaySelection, womens_swimming_200m_backstrokeSelection, mens_swimming_1500m_freestyleSelection, mens_golfSelection, womens_basketballSelection, womens_soccerSelection, mens_soccerSelection, womens_beach_volleyballSelection, mens_waterpoloSelection, womens_bmxSelection, mens_bmxSelection, mens_handballSelection, show_jumpingSelection
 from CountryInfo.models import Sport
-from .forms import eventingSelectionForm, womens_all_around_gymnasticsSelectionForm, mens_all_around_gymnasticsSelectionForm, womens_track_4x100_relaySelectionForm, mens_track_4x100_relaySelectionForm, womens_decathalonSelectionForm, mens_decathalonSelectionForm, womens_swimming_4x100_medley_relaySelectionForm, mens_swimming_4x100_medley_relaySelectionForm, womens_swimming_200m_backstrokeSelectionForm, mens_swimming_1500m_freestyleSelectionForm, mens_golfSelectionForm, womens_basketballSelectionForm, womens_soccerSelectionForm, mens_soccerSelectionForm, womens_beach_volleyballSelectionForm, mens_waterpoloSelectionForm, womens_bmxSelectionForm, mens_bmxSelectionForm, mens_handballSelectionForm
+from .forms import eventingSelectionForm, womens_all_around_gymnasticsSelectionForm, mens_all_around_gymnasticsSelectionForm, womens_track_4x100_relaySelectionForm, mens_track_4x100_relaySelectionForm, womens_decathalonSelectionForm, mens_decathalonSelectionForm, womens_swimming_4x100_medley_relaySelectionForm, mens_swimming_4x100_medley_relaySelectionForm, womens_swimming_200m_backstrokeSelectionForm, mens_swimming_1500m_freestyleSelectionForm, mens_golfSelectionForm, womens_basketballSelectionForm, womens_soccerSelectionForm, mens_soccerSelectionForm, womens_beach_volleyballSelectionForm, mens_waterpoloSelectionForm, womens_bmxSelectionForm, mens_bmxSelectionForm, mens_handballSelectionForm, show_jumpingSelectionForm
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
@@ -345,4 +345,21 @@ def selection_mens_handball(request):
 
     else:
         form = mens_handballSelectionForm()
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    
+@login_required    
+def selection_show_jumping(request):
+    userselection = show_jumpingSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
+    sport = get_object_or_404(Sport, sport_slug='show-jumping')
+        
+    if request.method == "POST":
+        form = show_jumpingSelectionForm(request.POST)
+        if form.is_valid():
+            selection = form.save(commit=False)
+            selection.user = request.user
+            selection.save()
+            return redirect ('/sports/show-jumping/')
+
+    else:
+        form = show_jumpingSelectionForm()
     return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})

@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from .models import Sport 
-from UserSelections.models import eventingSelection, womens_all_around_gymnasticsSelection, mens_all_around_gymnasticsSelection, womens_track_4x100_relaySelection, mens_track_4x100_relaySelection, womens_decathalonSelection, mens_decathalonSelection, womens_swimming_4x100_medley_relaySelection, mens_swimming_4x100_medley_relaySelection, womens_swimming_200m_backstrokeSelection, mens_swimming_1500m_freestyleSelection, mens_golfSelection, womens_basketballSelection, womens_soccerSelection, mens_soccerSelection, womens_beach_volleyballSelection, mens_waterpoloSelection, womens_bmxSelection, mens_bmxSelection, mens_handballSelection
+from UserSelections.models import eventingSelection, womens_all_around_gymnasticsSelection, mens_all_around_gymnasticsSelection, womens_track_4x100_relaySelection, mens_track_4x100_relaySelection, womens_decathalonSelection, mens_decathalonSelection, womens_swimming_4x100_medley_relaySelection, mens_swimming_4x100_medley_relaySelection, womens_swimming_200m_backstrokeSelection, mens_swimming_1500m_freestyleSelection, mens_golfSelection, womens_basketballSelection, womens_soccerSelection, mens_soccerSelection, womens_beach_volleyballSelection, mens_waterpoloSelection, womens_bmxSelection, mens_bmxSelection, mens_handballSelection, show_jumpingSelection
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
@@ -127,4 +127,10 @@ def mens_bmx_detail(request):
 def mens_handball_detail(request):
     sport = get_object_or_404(Sport, sport_slug='mens-handball')
     userselection = mens_handballSelection.objects.filter(Q(sport_name='mens-handball') | Q(sport_name='none')).filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
+    return render(request, 'CountryInfo/sportdetail.html', {'userselection':userselection, 'sport':sport,})
+    
+@login_required
+def show_jumping_detail(request):
+    sport = get_object_or_404(Sport, sport_slug='show-jumping')
+    userselection = show_jumpingSelection.objects.filter(Q(sport_name='show-jumping') | Q(sport_name='none')).filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     return render(request, 'CountryInfo/sportdetail.html', {'userselection':userselection, 'sport':sport,})
