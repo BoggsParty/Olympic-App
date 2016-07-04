@@ -7,15 +7,15 @@
                 <h1>Current Rankings</h1>
             </div>
             <div align="center">
-                <table style="width:35%">
-                    <tr>
-                        <td><p><u>Username</u></p></td>
-                        <td><p><u>Score</u></p></td>
+                <table id="table1" style="width:35%">
+                    <tr id="tr1">
+                        <td id="td1"><p><u>Username</u></p></td>
+                        <td id="td1"><p><u>Score</u></p></td>
                     </tr>
                     {% for user in user %}                
-                    <tr>
-                        <td><p>{{ user.username }}</p></td> 
-                        <td><p>{{user.score}}</p></td>
+                    <tr id="tr1">
+                        <td id="td1"><p>{{ user.username }}</p></td> 
+                        <td id="td1"><p>{{user.score}}</p></td>
                     </tr>
                     {% endfor %}                
                 </table>

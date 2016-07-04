@@ -180,7 +180,7 @@ def selection_womens_swimming_200m_backstroke(request):
 
 def selection_mens_swimming_1500m_freestyle(request):
     userselection = mens_swimming_1500m_freestyleSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
-    sport = get_object_or_404(Sport, sport_slug='mens-swimming-1500m-freestyle')
+    sport = get_object_or_404(Sport, sport_slug='mens-swimming-200m-freestyle')
         
     if request.method == "POST":
         form = mens_swimming_1500m_freestyleSelectionForm(request.POST)
@@ -188,7 +188,7 @@ def selection_mens_swimming_1500m_freestyle(request):
             selection = form.save(commit=False)
             selection.user = request.user
             selection.save()
-            return redirect ('/sports/mens-swimming-1500m-freestyle/')
+            return redirect ('/sports/mens-swimming-200m-freestyle/')
 
     else:
         form = mens_swimming_1500m_freestyleSelectionForm()

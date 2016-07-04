@@ -71,8 +71,8 @@ def womens_swimming_200m_backstroke_detail(request):
 
 @login_required
 def mens_swimming_1500m_freestyle_detail(request):
-    sport = get_object_or_404(Sport, sport_slug='mens-swimming-1500m-freestyle')
-    userselection = mens_swimming_1500m_freestyleSelection.objects.filter(Q(sport_name='mens-swimming-1500m-freestyle') | Q(sport_name='none')).filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
+    sport = get_object_or_404(Sport, sport_slug='mens-swimming-200m-freestyle')
+    userselection = mens_swimming_1500m_freestyleSelection.objects.filter(Q(sport_name='mens-swimming-200m-freestyle') | Q(sport_name='none')).filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     return render(request, 'CountryInfo/sportdetail.html', {'userselection':userselection, 'sport':sport,})
 
 @login_required

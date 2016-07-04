@@ -140,14 +140,14 @@ class womens_swimming_200m_backstrokeSelection (models.Model):
     silver = models.ForeignKey(womens_swimming_200m_backstrokeOptions,blank=True, null=True, related_name = 'silver+')
     bronze = models.ForeignKey(womens_swimming_200m_backstrokeOptions,blank=True, null=True, related_name = 'bronze+')
     date_created = models.DateTimeField(default=timezone.now)
-    
+#1500 was changed to 200m slug only   
 class mens_swimming_1500m_freestyleOptions (models.Model):
     athlete_name = models.CharField(max_length=200, default='')
     def __str__(self):
         return self.athlete_name
 
 class mens_swimming_1500m_freestyleSelection (models.Model):
-    sport_name = models.CharField(max_length=200, default='mens-swimming-1500m-freestyle')
+    sport_name = models.CharField(max_length=200, default='mens-swimming-200m-freestyle')
     user = models.ForeignKey('auth.User', blank=True, null=True)
     place = models.CharField(max_length=200, default='none')
     gold = models.ForeignKey(mens_swimming_1500m_freestyleOptions,blank=True, null=True, related_name = 'gold+')
