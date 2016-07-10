@@ -1,0 +1,21 @@
+{% extends 'Main/header.html' %}
+
+{% block content %}
+<html>
+    <body>
+        <div align="center">
+            <h1>Women's Beach Volleyball</h1>
+        </div>
+        <div align="left">
+                <table style="width 100%">                  
+                    {% for womens_beach_volleyball in womens_beach_volleyball %}
+                    <tr id="tr1">
+                    <td><p id="p5"><b>{{ womens_beach_volleyball.user }}</b></p></td>
+                    <td><p><b>Gold-</b> {{ womens_beach_volleyball.gold }}</p></td>
+                    <td><p><b>Silver-</b> {{ womens_beach_volleyball.silver }}</p></td>
+                    <td><p><b>Bronze-</b> {{ womens_beach_volleyball.bronze }}</p></td></tr>
+                    {% endfor %}
+        </div>
+    </body>
+</html>
+{% endblock %}

@@ -41,6 +41,12 @@ p {
     padding: 0px 50px;
     text-align: center;
 }
+#p5 {
+    color: #bb3344;
+    font-family: sans-serif;
+    font-size: 200%;
+    padding: 0px 50px;
+}
 a {
     color: #008040;
     font-family: Georgia, serif;
@@ -53,6 +59,13 @@ a {
     color: #008040;
     font-family: Georgia, serif;
     font-size: 24pt;
+    text-decoration: none;
+    padding-left: 50px;
+}
+#link2 {
+    color: #008040;
+    font-family: Georgia, serif;
+    font-size: 20pt;
     text-decoration: none;
     padding-left: 50px;
 }

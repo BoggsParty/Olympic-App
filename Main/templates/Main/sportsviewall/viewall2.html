@@ -1,0 +1,21 @@
+{% extends 'Main/header.html' %}
+
+{% block content %}
+<html>
+    <body>
+        <div align="center">
+            <h1>Show Jumping</h1>
+        </div>
+        <div align="left">
+                <table style="width 100%">                  
+                    {% for show_jumping in show_jumping %}
+                    <tr id="tr1">
+                    <td><p id="p5"><b>{{ show_jumping.user }}</b></p></td>
+                    <td><p><b>Gold-</b> {{ show_jumping.gold }}</p></td>
+                    <td><p><b>Silver-</b> {{ show_jumping.silver }}</p></td>
+                    <td><p><b>Bronze-</b> {{ show_jumping.bronze }}</p></td></tr>
+                    {% endfor %}
+        </div>
+    </body>
+</html>
+{% endblock %}

@@ -25,6 +25,8 @@ class Sport(models.Model):
     image = models.URLField(max_length=200, blank=True, default='')
     source_link = models.URLField(max_length=200, blank=True, default='')
     source_text = models.CharField(max_length=200, blank=True, default='')
+    view_rankings = models.CharField(max_length=200, blank=True, default='')
+    rankings_link = models.URLField(max_length=200, blank=True, default='')
     def __str__(self):
         return self.sport_name
         

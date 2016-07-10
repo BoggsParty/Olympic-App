@@ -1,0 +1,21 @@
+{% extends 'Main/header.html' %}
+
+{% block content %}
+<html>
+    <body>
+        <div align="center">
+            <h1>Women's Swimming 4x100m Medley Relay</h1>
+        </div>
+        <div align="left">
+                <table style="width 100%">                  
+                    {% for womens_swimming_4x100_medley_relay in womens_swimming_4x100_medley_relay %}
+                    <tr id="tr1">
+                    <td><p id="p5"><b>{{ womens_swimming_4x100_medley_relay.user }}</b></p></td>
+                    <td><p><b>Gold-</b> {{ womens_swimming_4x100_medley_relay.gold }}</p></td>
+                    <td><p><b>Silver-</b> {{ womens_swimming_4x100_medley_relay.silver }}</p></td>
+                    <td><p><b>Bronze-</b> {{ womens_swimming_4x100_medley_relay.bronze }}</p></td></tr>
+                    {% endfor %}
+        </div>
+    </body>
+</html>
+{% endblock %}

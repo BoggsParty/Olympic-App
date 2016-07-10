@@ -1,0 +1,21 @@
+{% extends 'Main/header.html' %}
+
+{% block content %}
+<html>
+    <body>
+        <div align="center">
+            <h1>Women's All-Around Gymnastics</h1>
+        </div>
+        <div align="left">
+                <table style="width 100%">                  
+                    {% for womens_all_around_gymnastics in womens_all_around_gymnastics %}
+                    <tr id="tr1">
+                    <td><p id="p5"><b>{{ womens_all_around_gymnastics.user }}</b></p></td>
+                    <td><p><b>Gold-</b> {{ womens_all_around_gymnastics.gold }}</p></td>
+                    <td><p><b>Silver-</b> {{ womens_all_around_gymnastics.silver }}</p></td>
+                    <td><p><b>Bronze-</b> {{ womens_all_around_gymnastics.bronze }}</p></td></tr>
+                    {% endfor %}
+        </div>
+    </body>
+</html>
+{% endblock %}

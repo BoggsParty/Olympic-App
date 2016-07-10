@@ -77,7 +77,7 @@ class womens_decathalonOptions (models.Model):
         return self.athlete_name
 
 class womens_decathalonSelection (models.Model):
-    sport_name = models.CharField(max_length=200, default='womens-decathalon')
+    sport_name = models.CharField(max_length=200, default='womens-3000m-steeplechase')
     user = models.ForeignKey('auth.User', blank=True, null=True)
     place = models.CharField(max_length=200, default='none')
     gold = models.ForeignKey(womens_decathalonOptions,blank=True, null=True, related_name = 'gold+')
@@ -91,7 +91,7 @@ class mens_decathalonOptions (models.Model):
         return self.athlete_name
 
 class mens_decathalonSelection (models.Model):
-    sport_name = models.CharField(max_length=200, default='mens-decathalon')
+    sport_name = models.CharField(max_length=200, default='mens-3000m-steeplechase')
     user = models.ForeignKey('auth.User', blank=True, null=True)
     place = models.CharField(max_length=200, default='none')
     gold = models.ForeignKey(mens_decathalonOptions,blank=True, null=True, related_name = 'gold+')

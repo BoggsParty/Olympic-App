@@ -41,14 +41,14 @@ def mens_track_4x100_relay_detail(request):
     
 @login_required
 def womens_decathalon_detail(request):
-    sport = get_object_or_404(Sport, sport_slug='womens-decathalon')
-    userselection = womens_decathalonSelection.objects.filter(Q(sport_name='womens-decathalon') | Q(sport_name='none')).filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
+    sport = get_object_or_404(Sport, sport_slug='womens-3000m-steeplechase')
+    userselection = womens_decathalonSelection.objects.filter(Q(sport_name='womens-3000m-steeplechase') | Q(sport_name='none')).filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     return render(request, 'CountryInfo/sportdetail.html', {'userselection':userselection, 'sport':sport,})
 
 @login_required
 def mens_decathalon_detail(request):
-    sport = get_object_or_404(Sport, sport_slug='mens-decathalon')
-    userselection = mens_decathalonSelection.objects.filter(Q(sport_name='mens-decathalon') | Q(sport_name='none')).filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
+    sport = get_object_or_404(Sport, sport_slug='mens-3000m-steeplechase')
+    userselection = mens_decathalonSelection.objects.filter(Q(sport_name='mens-3000m-steeplechase') | Q(sport_name='none')).filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     return render(request, 'CountryInfo/sportdetail.html', {'userselection':userselection, 'sport':sport,})
     
 @login_required

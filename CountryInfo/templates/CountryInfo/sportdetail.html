@@ -9,6 +9,8 @@
             <p>{{ sport.scoring|linebreaks }}</p>
         <h2>Who's going to win?</h2>
             <p>{{ sport.favorite|linebreaks }}</p>
+            <a id="link2" href="{{ sport.rankings_link }}">{{ sport.view_rankings }}</a>
+
         <h2>When to watch</h2>
             <p>{{ sport.competition_dates|linebreaks }}</p>
     </div>

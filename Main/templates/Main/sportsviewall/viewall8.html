@@ -1,0 +1,21 @@
+{% extends 'Main/header.html' %}
+
+{% block content %}
+<html>
+    <body>
+        <div align="center">
+            <h1>Men's Handball</h1>
+        </div>
+        <div align="left">
+                <table style="width 100%">                  
+                    {% for mens_handball in mens_handball %}
+                    <tr id="tr1">
+                    <td><p id="p5"><b>{{ mens_handball.user }}</b></p></td>
+                    <td><p><b>Gold-</b> {{ mens_handball.gold }}</p></td>
+                    <td><p><b>Silver-</b> {{ mens_handball.silver }}</p></td>
+                    <td><p><b>Bronze-</b> {{ mens_handball.bronze }}</p></td></tr>
+                    {% endfor %}
+        </div>
+    </body>
+</html>
+{% endblock %}

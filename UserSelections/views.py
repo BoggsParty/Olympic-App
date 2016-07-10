@@ -4,13 +4,23 @@ from CountryInfo.models import Sport
 from .forms import eventingSelectionForm, womens_all_around_gymnasticsSelectionForm, mens_all_around_gymnasticsSelectionForm, womens_track_4x100_relaySelectionForm, mens_track_4x100_relaySelectionForm, womens_decathalonSelectionForm, mens_decathalonSelectionForm, womens_swimming_4x100_medley_relaySelectionForm, mens_swimming_4x100_medley_relaySelectionForm, womens_swimming_200m_backstrokeSelectionForm, mens_swimming_1500m_freestyleSelectionForm, mens_golfSelectionForm, womens_basketballSelectionForm, womens_soccerSelectionForm, mens_soccerSelectionForm, womens_beach_volleyballSelectionForm, mens_waterpoloSelectionForm, womens_bmxSelectionForm, mens_bmxSelectionForm, mens_handballSelectionForm, show_jumpingSelectionForm
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+import datetime
 
 
 @login_required
 def selection_eventing(request):
     userselection = eventingSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='eventing')
-        
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 6 < now.month:
+        allow_change = False
+    else:
+        allow_change = True   
     if request.method == "POST":
         form = eventingSelectionForm(request.POST)
         if form.is_valid():
@@ -21,12 +31,22 @@ def selection_eventing(request):
 
     else:
         form = eventingSelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection}) 
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change}) 
 
 @login_required
 def selection_womens_all_around_gymnastics(request):
     userselection = womens_all_around_gymnasticsSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='womens-all-around-gymnastics')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = womens_all_around_gymnasticsSelectionForm(request.POST)
@@ -38,12 +58,22 @@ def selection_womens_all_around_gymnastics(request):
 
     else:
         form = womens_all_around_gymnasticsSelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
 
 @login_required
 def selection_mens_all_around_gymnastics(request):
     userselection = mens_all_around_gymnasticsSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-all-around-gymnastics')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = mens_all_around_gymnasticsSelectionForm(request.POST)
@@ -55,12 +85,22 @@ def selection_mens_all_around_gymnastics(request):
 
     else:
         form = mens_all_around_gymnasticsSelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
     
 @login_required
 def selection_womens_track_4x100_relay(request):
     userselection = womens_track_4x100_relaySelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='womens-track-4x100-relay')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = womens_track_4x100_relaySelectionForm(request.POST)
@@ -72,12 +112,22 @@ def selection_womens_track_4x100_relay(request):
 
     else:
         form = womens_track_4x100_relaySelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
 
 @login_required
 def selection_mens_track_4x100_relay(request):
     userselection = mens_track_4x100_relaySelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-track-4x100-relay')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = mens_track_4x100_relaySelectionForm(request.POST)
@@ -89,12 +139,22 @@ def selection_mens_track_4x100_relay(request):
 
     else:
         form = mens_track_4x100_relaySelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
 
 @login_required
 def selection_womens_decathalon(request):
     userselection = womens_decathalonSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
-    sport = get_object_or_404(Sport, sport_slug='womens-decathalon')
+    sport = get_object_or_404(Sport, sport_slug='womens-3000m-steeplechase')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = womens_decathalonSelectionForm(request.POST)
@@ -102,16 +162,26 @@ def selection_womens_decathalon(request):
             selection = form.save(commit=False)
             selection.user = request.user
             selection.save()
-            return redirect ('/sports/womens-decathalon/')
+            return redirect ('/sports/womens-3000m-steeplechase/')
 
     else:
         form = womens_decathalonSelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
 
 @login_required
 def selection_mens_decathalon(request):
     userselection = mens_decathalonSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
-    sport = get_object_or_404(Sport, sport_slug='mens-decathalon')
+    sport = get_object_or_404(Sport, sport_slug='mens-3000m-steeplechase')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = mens_decathalonSelectionForm(request.POST)
@@ -119,16 +189,26 @@ def selection_mens_decathalon(request):
             selection = form.save(commit=False)
             selection.user = request.user
             selection.save()
-            return redirect ('/sports/mens-decathalon/')
+            return redirect ('/sports/mens-3000m-steeplechase/')
 
     else:
         form = mens_decathalonSelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
     
 @login_required
 def selection_womens_swimming_4x100_medley_relay(request):
     userselection = womens_swimming_4x100_medley_relaySelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='womens-swimming-4x100-medley-relay')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = womens_swimming_4x100_medley_relaySelectionForm(request.POST)
@@ -140,12 +220,22 @@ def selection_womens_swimming_4x100_medley_relay(request):
 
     else:
         form = womens_swimming_4x100_medley_relaySelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
 
 @login_required
 def selection_mens_swimming_4x100_medley_relay(request):
     userselection = mens_swimming_4x100_medley_relaySelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-swimming-4x100-medley-relay')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = mens_swimming_4x100_medley_relaySelectionForm(request.POST)
@@ -157,12 +247,22 @@ def selection_mens_swimming_4x100_medley_relay(request):
 
     else:
         form = mens_swimming_4x100_medley_relaySelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
 
 @login_required
 def selection_womens_swimming_200m_backstroke(request):
     userselection = womens_swimming_200m_backstrokeSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='womens-swimming-200m-backstroke')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = womens_swimming_200m_backstrokeSelectionForm(request.POST)
@@ -174,13 +274,23 @@ def selection_womens_swimming_200m_backstroke(request):
 
     else:
         form = womens_swimming_200m_backstrokeSelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
 
 @login_required
 
 def selection_mens_swimming_1500m_freestyle(request):
     userselection = mens_swimming_1500m_freestyleSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-swimming-200m-freestyle')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = mens_swimming_1500m_freestyleSelectionForm(request.POST)
@@ -192,12 +302,22 @@ def selection_mens_swimming_1500m_freestyle(request):
 
     else:
         form = mens_swimming_1500m_freestyleSelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
 
 @login_required
 def selection_mens_golf(request):
     userselection = mens_golfSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-golf')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = mens_golfSelectionForm(request.POST)
@@ -209,12 +329,22 @@ def selection_mens_golf(request):
 
     else:
         form = mens_golfSelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
 
 @login_required
 def selection_womens_basketball(request):
     userselection = womens_basketballSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='womens-basketball')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = womens_basketballSelectionForm(request.POST)
@@ -226,12 +356,22 @@ def selection_womens_basketball(request):
 
     else:
         form = womens_basketballSelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
 
 @login_required
 def selection_womens_soccer(request):
     userselection = womens_soccerSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='womens-soccer')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = womens_soccerSelectionForm(request.POST)
@@ -243,12 +383,22 @@ def selection_womens_soccer(request):
 
     else:
         form = womens_soccerSelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
 
 @login_required
 def selection_mens_soccer(request):
     userselection = mens_soccerSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-soccer')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = mens_soccerSelectionForm(request.POST)
@@ -260,12 +410,22 @@ def selection_mens_soccer(request):
 
     else:
         form = mens_soccerSelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
 
 @login_required
 def selection_womens_beach_volleyball(request):
     userselection = womens_beach_volleyballSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='womens-beach-volleyball')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = womens_beach_volleyballSelectionForm(request.POST)
@@ -277,12 +437,22 @@ def selection_womens_beach_volleyball(request):
 
     else:
         form = womens_beach_volleyballSelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
 
 @login_required
 def selection_mens_waterpolo(request):
     userselection = mens_waterpoloSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-waterpolo')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = mens_waterpoloSelectionForm(request.POST)
@@ -294,12 +464,22 @@ def selection_mens_waterpolo(request):
 
     else:
         form = mens_waterpoloSelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
 
 @login_required
 def selection_womens_bmx(request):
     userselection = womens_bmxSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='womens-bmx')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = womens_bmxSelectionForm(request.POST)
@@ -311,12 +491,22 @@ def selection_womens_bmx(request):
 
     else:
         form = womens_bmxSelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
 
 @login_required
 def selection_mens_bmx(request):
     userselection = mens_bmxSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-bmx')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = mens_bmxSelectionForm(request.POST)
@@ -328,12 +518,22 @@ def selection_mens_bmx(request):
 
     else:
         form = mens_bmxSelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
 
 @login_required    
 def selection_mens_handball(request):
     userselection = mens_handballSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-handball')
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 22 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True 
         
     if request.method == "POST":
         form = mens_handballSelectionForm(request.POST)
@@ -345,13 +545,22 @@ def selection_mens_handball(request):
 
     else:
         form = mens_handballSelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
     
 @login_required    
 def selection_show_jumping(request):
     userselection = show_jumpingSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='show-jumping')
-        
+    now = datetime.datetime.now()
+    allow_change = True
+    if 9 < now.day:
+        allow_change = False
+    elif 9 == now.day and 0 <= now.hour:
+        allow_change = False
+    elif 6 < now.month:
+        allow_change = False
+    else:
+        allow_change = True    
     if request.method == "POST":
         form = show_jumpingSelectionForm(request.POST)
         if form.is_valid():
@@ -362,4 +571,4 @@ def selection_show_jumping(request):
 
     else:
         form = show_jumpingSelectionForm()
-    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection})
+    return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})

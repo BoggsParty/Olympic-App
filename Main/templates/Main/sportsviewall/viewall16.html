@@ -1,0 +1,21 @@
+{% extends 'Main/header.html' %}
+
+{% block content %}
+<html>
+    <body>
+        <div align="center">
+            <h1>Men's Track 4x100m Relay</h1>
+        </div>
+        <div align="left">
+                <table style="width 100%">                  
+                    {% for mens_track_4x100m_relay in mens_track_4x100m_relay %}
+                    <tr id="tr1">
+                    <td><p id="p5"><b>{{ mens_track_4x100m_relay.user }}</b></p></td>
+                    <td><p><b>Gold-</b> {{ mens_track_4x100m_relay.gold }}</p></td>
+                    <td><p><b>Silver-</b> {{ mens_track_4x100m_relay.silver }}</p></td>
+                    <td><p><b>Bronze-</b> {{ mens_track_4x100m_relay.bronze }}</p></td></tr>
+                    {% endfor %}
+        </div>
+    </body>
+</html>
+{% endblock %}

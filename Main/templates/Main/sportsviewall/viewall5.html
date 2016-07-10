@@ -1,0 +1,21 @@
+{% extends 'Main/header.html' %}
+
+{% block content %}
+<html>
+    <body>
+        <div align="center">
+            <h1>Women's BMX</h1>
+        </div>
+        <div align="left">
+                <table style="width 100%">                  
+                    {% for womens_bmx in womens_bmx %}
+                    <tr id="tr1">
+                    <td><p id="p5"><b>{{ womens_bmx.user }}</b></p></td>
+                    <td><p><b>Gold-</b> {{ womens_bmx.gold }}</p></td>
+                    <td><p><b>Silver-</b> {{ womens_bmx.silver }}</p></td>
+                    <td><p><b>Bronze-</b> {{ womens_bmx.bronze }}</p></td></tr>
+                    {% endfor %}
+        </div>
+    </body>
+</html>
+{% endblock %}

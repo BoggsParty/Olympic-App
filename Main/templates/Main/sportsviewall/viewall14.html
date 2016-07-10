@@ -1,0 +1,21 @@
+{% extends 'Main/header.html' %}
+
+{% block content %}
+<html>
+    <body>
+        <div align="center">
+            <h1>Men's Decathalon</h1>
+        </div>
+        <div align="left">
+                <table style="width 100%">                  
+                    {% for mens_decathalon in mens_decathalon %}
+                    <tr id="tr1">
+                    <td><p id="p5"><b>{{ mens_decathalon.user }}</b></p></td>
+                    <td><p><b>Gold-</b> {{ mens_decathalon.gold }}</p></td>
+                    <td><p><b>Silver-</b> {{ mens_decathalon.silver }}</p></td>
+                    <td><p><b>Bronze-</b> {{ mens_decathalon.bronze }}</p></td></tr>
+                    {% endfor %}
+        </div>
+    </body>
+</html>
+{% endblock %}

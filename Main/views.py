@@ -10,6 +10,7 @@ from UserSelections.models import eventingSelection, womens_all_around_gymnastic
 from Rankings.models import Ranking
 from CountryInfo.models import Sport
 from django.utils import timezone
+import datetime
 from django.db.models import Q
 
 
@@ -40,10 +41,114 @@ def view_all(request):
 
 @login_required
 def view_all_1(request):
-    eventing = eventingSelection.objects.filter(sport_name='eventing')
-    return render(request, 'Main/sportsviewall/viewall1.html', {'eventing':eventing})
+    now = datetime.datetime.now()
+    allow_change = True
+    if 32 < now.day:
+        allow_change = False
+    elif 32 == now.day and 24 <= now.hour:
+        allow_change = False
+    elif 8 < now.month:
+        allow_change = False
+    else:
+        allow_change = True
+    eventing = eventingSelection.objects.filter(sport_name='eventing').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall1.html', {'eventing':eventing, 'allow_change':allow_change,})
 
- 
+@login_required
+def view_all_2(request):
+    show_jumping = show_jumpingSelection.objects.filter(sport_name='show-jumping').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall2.html', {'show_jumping':show_jumping})
+    
+@login_required
+def view_all_3(request):
+    womens_beach_volleyball = womens_beach_volleyballSelection.objects.filter(sport_name='womens-beach-volleyball').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall3.html', {'womens_beach_volleyball':womens_beach_volleyball})
+  
+@login_required
+def view_all_4(request):
+    mens_waterpolo = mens_waterpoloSelection.objects.filter(sport_name='mens-waterpolo').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall4.html', {'mens_waterpolo':mens_waterpolo})
+    
+@login_required
+def view_all_5(request):
+    womens_bmx = womens_bmxSelection.objects.filter(sport_name='womens-bmx').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall5.html', {'womens_bmx':womens_bmx})
+    
+@login_required
+def view_all_6(request):
+    mens_bmx = mens_bmxSelection.objects.filter(sport_name='mens-bmx').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall6.html', {'mens_bmx':mens_bmx})
+    
+@login_required
+def view_all_7(request):
+    womens_basketball = womens_basketballSelection.objects.filter(sport_name='womens-basketball').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall7.html', {'womens_basketball':womens_basketball})
+    
+@login_required
+def view_all_8(request):
+    mens_handball = mens_handballSelection.objects.filter(sport_name='mens_handball').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall8.html', {'mens_handball':mens_handball})
+    
+@login_required
+def view_all_9(request):
+    womens_swimming_4x100_medley_relay = womens_swimming_4x100_medley_relaySelection.objects.filter(sport_name='womens-4x100-medley-relay').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall9.html', {'womens_swimming_4x100_medley_relay':womens_swimming_4x100_medley_relay})
+    
+@login_required
+def view_all_10(request):
+    mens_swimming_4x100_medley_relay = mens_swimming_4x100_medley_relaySelection.objects.filter(sport_name='mens-swimming-4x100-medley-relay').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall10.html', {'mens_swimming_4x100_medley_relay':mens_swimming_4x100_medley_relay})
+    
+@login_required
+def view_all_11(request):
+    womens_swimming_200m_backstroke = womens_swimming_200m_backstrokeSelection.objects.filter(sport_name='womens-swimming-200m-backstroke').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall11.html', {'womens_swimming_200m_backstroke':womens_swimming_200m_backstroke})
+
+@login_required
+def view_all_12(request):
+    mens_swimming_1500m_freestyle = mens_swimming_1500m_freestyleSelection.objects.filter(sport_name='mens-swimming-200m-freestyle').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall12.html', {'mens_swimming_1500m_freestyle':mens_swimming_1500m_freestyle})
+    
+@login_required
+def view_all_13(request):
+    womens_decathalon = womens_decathalonSelection.objects.filter(sport_name='womens-decathalon').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall13.html', {'womens_decathalon':womens_decathalon})
+    
+@login_required
+def view_all_14(request):
+    mens_decathalon = mens_decathalonSelection.objects.filter(sport_name='mens-decathalon').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall14.html', {'mens_decathalon':mens_decathalon})
+    
+@login_required
+def view_all_15(request):
+    womens_track_4x100_relay = womens_track_4x100_relaySelection.objects.filter(sport_name='womens-track-4x100-relay').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall15.html', {'womens_track_4x100_relay':womens_track_4x100_relay})
+    
+@login_required
+def view_all_16(request):
+    mens_track_4x100_relay = mens_track_4x100_relaySelection.objects.filter(sport_name='mens-track-4x100-relay').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall16.html', {'mens_track_4x100_relay':mens_track_4x100_relay})
+    
+@login_required
+def view_all_17(request):
+    womens_soccer = womens_soccerSelection.objects.filter(sport_name='womens-soccer').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall17.html', {'womens_soccer':womens_soccer})
+    
+@login_required
+def view_all_18(request):
+    mens_soccer = mens_soccerSelection.objects.filter(sport_name='mens-soccer').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall18.html', {'mens_soccer':mens_soccer})
+    
+@login_required
+def view_all_19(request):
+    womens_all_around_gymnastics = womens_all_around_gymnasticsSelection.objects.filter(sport_name='womens-all-around-gymnastics').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall19.html', {'womens_all_around_gymnastics':womens_all_around_gymnastics})
+
+@login_required
+def view_all_20(request):
+    mens_all_around_gymnastics = mens_all_around_gymnasticsSelection.objects.filter(sport_name='mens-all-around-gymnastics').exclude(user__isnull=True)
+    return render(request, 'Main/sportsviewall/viewall20.html', {'mens_all_around_gymnastics':mens_all_around_gymnastics})
+
 @login_required
 def dashboard(request):
     user = Ranking.objects.all().order_by('-score')

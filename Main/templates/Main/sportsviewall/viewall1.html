@@ -4,16 +4,17 @@
 <html>
     <body>
         <div align="center">
-                    <h2>Eventing</h2>
+            <h1>Eventing</h1>
+        </div>
+        <div align="left">
+                <table style="width 100%">                  
                     {% for eventing in eventing %}
-                    <h2>{{ eventing.user }}</h2>
-                    <p><b>Gold-</b></p>
-                    <p>{{ eventing.gold }}</p>
-                    <p><b>Silver-</b></p>
-                    <p>{{ eventing.silver }}</p>
-                    <p><b>Bronze-</b></p>
-                    <p>{{ eventing.bronze }}</p>
-                    {% endfor %}
+                    <tr id="tr1">
+                    <td><p id="p5"><b>{{ eventing.user }}</b></p></td>
+                    <td><p><b>Gold-</b> {{ eventing.gold }}</p></td>
+                    <td><p><b>Silver-</b> {{ eventing.silver }}</p></td>
+                    <td><p><b>Bronze-</b> {{ eventing.bronze }}</p></td></tr>
+                    {% endfor %}           
         </div>
     </body>
 </html>

@@ -1,0 +1,21 @@
+{% extends 'Main/header.html' %}
+
+{% block content %}
+<html>
+    <body>
+        <div align="center">
+            <h1>Men's Soccer</h1>
+        </div>
+        <div align="left">
+                <table style="width 100%">                  
+                    {% for mens_soccer in mens_soccer %}
+                    <tr id="tr1">
+                    <td><p id="p5"><b>{{ mens_soccer.user }}</b></p></td>
+                    <td><p><b>Gold-</b> {{ mens_soccer.gold }}</p></td>
+                    <td><p><b>Silver-</b> {{ mens_soccer.silver }}</p></td>
+                    <td><p><b>Bronze-</b> {{ mens_soccer.bronze }}</p></td></tr>
+                    {% endfor %}
+        </div>
+    </body>
+</html>
+{% endblock %}
