@@ -553,11 +553,11 @@ def selection_show_jumping(request):
     sport = get_object_or_404(Sport, sport_slug='show-jumping')
     now = datetime.datetime.now()
     allow_change = True
-    if 9 < now.day:
+    if 32 < now.day:
         allow_change = False
-    elif 9 == now.day and 0 <= now.hour:
+    elif 32 == now.day and 0 <= now.hour:
         allow_change = False
-    elif 6 < now.month:
+    elif 8 < now.month:
         allow_change = False
     else:
         allow_change = True    
