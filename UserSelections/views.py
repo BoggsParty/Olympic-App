@@ -17,7 +17,7 @@ def selection_eventing(request):
         allow_change = False
     elif 32 == now.day and 22 <= now.hour:
         allow_change = False
-    elif 6 < now.month:
+    elif 8 < now.month:
         allow_change = False
     else:
         allow_change = True   
