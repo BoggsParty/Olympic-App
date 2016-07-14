@@ -59,6 +59,8 @@ class womens_swimming_200m_backstrokeSelectionAdmin(admin.ModelAdmin):
     list_display = ('user', 'sport_name',)
 admin.site.register(womens_swimming_200m_backstrokeSelection, womens_swimming_200m_backstrokeSelectionAdmin)
 
+admin.site.register(womens_swimming_200m_backstrokeOptions)
+
 class mens_swimming_1500m_freestyleSelectionAdmin(admin.ModelAdmin):
     list_display = ('user', 'sport_name',)
 admin.site.register(mens_swimming_1500m_freestyleSelection, mens_swimming_1500m_freestyleSelectionAdmin)

@@ -13,14 +13,14 @@ def selection_eventing(request):
     sport = get_object_or_404(Sport, sport_slug='eventing')
     now = datetime.datetime.now()
     allow_change = True
-    if 6 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 6 < now.day:
         allow_change = False
-    elif 6 == now.day and 0 <= now.hour:
+    elif 6 == now.day:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True   
     if request.method == "POST":
@@ -41,14 +41,14 @@ def selection_womens_all_around_gymnastics(request):
     sport = get_object_or_404(Sport, sport_slug='womens-all-around-gymnastics')
     now = datetime.datetime.now()
     allow_change = True
-    if 9 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 9 < now.day:
         allow_change = False
     elif 9 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -70,14 +70,14 @@ def selection_mens_all_around_gymnastics(request):
     sport = get_object_or_404(Sport, sport_slug='mens-all-around-gymnastics')
     now = datetime.datetime.now()
     allow_change = True
-    if 8 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 8 < now.day:
         allow_change = False
     elif 8 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -99,14 +99,14 @@ def selection_womens_track_4x100_relay(request):
     sport = get_object_or_404(Sport, sport_slug='womens-track-4x100-relay')
     now = datetime.datetime.now()
     allow_change = True
-    if 19 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 19 < now.day:
         allow_change = False
     elif 19 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -128,14 +128,14 @@ def selection_mens_track_4x100_relay(request):
     sport = get_object_or_404(Sport, sport_slug='mens-track-4x100-relay')
     now = datetime.datetime.now()
     allow_change = True
-    if 19 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 19 < now.day:
         allow_change = False
     elif 19 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -157,14 +157,14 @@ def selection_womens_decathalon(request):
     sport = get_object_or_404(Sport, sport_slug='womens-3000m-steeplechase')
     now = datetime.datetime.now()
     allow_change = True
-    if 15 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 15 < now.day:
         allow_change = False
     elif 15 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -186,14 +186,14 @@ def selection_mens_decathalon(request):
     sport = get_object_or_404(Sport, sport_slug='mens-3000m-steeplechase')
     now = datetime.datetime.now()
     allow_change = True
-    if 17 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 17 < now.day:
         allow_change = False
     elif 17 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -215,14 +215,16 @@ def selection_womens_swimming_4x100_medley_relay(request):
     sport = get_object_or_404(Sport, sport_slug='womens-swimming-4x100-medley-relay')
     now = datetime.datetime.now()
     allow_change = True
-    if 12 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 7 == now.month:
+        allow_change = True
+    elif 12 < now.day:
         allow_change = False
     elif 12 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -244,14 +246,14 @@ def selection_mens_swimming_4x100_medley_relay(request):
     sport = get_object_or_404(Sport, sport_slug='mens-swimming-4x100-medley-relay')
     now = datetime.datetime.now()
     allow_change = True
-    if 12 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 12 < now.day:
         allow_change = False
     elif 12 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -273,14 +275,14 @@ def selection_womens_swimming_200m_backstroke(request):
     sport = get_object_or_404(Sport, sport_slug='womens-swimming-200m-backstroke')
     now = datetime.datetime.now()
     allow_change = True
-    if 11 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 11 < now.day:
         allow_change = False
     elif 11 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -303,14 +305,14 @@ def selection_mens_swimming_1500m_freestyle(request):
     sport = get_object_or_404(Sport, sport_slug='mens-swimming-200m-freestyle')
     now = datetime.datetime.now()
     allow_change = True
-    if 7 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 7 < now.day:
         allow_change = False
     elif 7 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -332,14 +334,14 @@ def selection_mens_golf(request):
     sport = get_object_or_404(Sport, sport_slug='mens-golf')
     now = datetime.datetime.now()
     allow_change = True
-    if 32 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 32 < now.day:
         allow_change = False
     elif 32 == now.day and 22 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -361,14 +363,14 @@ def selection_womens_basketball(request):
     sport = get_object_or_404(Sport, sport_slug='womens-basketball')
     now = datetime.datetime.now()
     allow_change = True
-    if 16 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 16 < now.day:
         allow_change = False
     elif 16 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -390,14 +392,14 @@ def selection_womens_soccer(request):
     sport = get_object_or_404(Sport, sport_slug='womens-soccer')
     now = datetime.datetime.now()
     allow_change = True
-    if 12 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 12 < now.day:
         allow_change = False
     elif 12 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -419,14 +421,14 @@ def selection_mens_soccer(request):
     sport = get_object_or_404(Sport, sport_slug='mens-soccer')
     now = datetime.datetime.now()
     allow_change = True
-    if 13 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 13 < now.day:
         allow_change = False
     elif 13 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -448,14 +450,14 @@ def selection_womens_beach_volleyball(request):
     sport = get_object_or_404(Sport, sport_slug='womens-beach-volleyball')
     now = datetime.datetime.now()
     allow_change = True
-    if 16 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 16 < now.day:
         allow_change = False
     elif 16 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -477,14 +479,14 @@ def selection_mens_waterpolo(request):
     sport = get_object_or_404(Sport, sport_slug='mens-waterpolo')
     now = datetime.datetime.now()
     allow_change = True
-    if 16 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 16 < now.day:
         allow_change = False
     elif 16 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -506,14 +508,14 @@ def selection_womens_bmx(request):
     sport = get_object_or_404(Sport, sport_slug='womens-bmx')
     now = datetime.datetime.now()
     allow_change = True
-    if 19 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 19 < now.day:
         allow_change = False
     elif 19 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -535,14 +537,14 @@ def selection_mens_bmx(request):
     sport = get_object_or_404(Sport, sport_slug='mens-bmx')
     now = datetime.datetime.now()
     allow_change = True
-    if 19 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 19 < now.day:
         allow_change = False
     elif 19 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -564,14 +566,14 @@ def selection_mens_handball(request):
     sport = get_object_or_404(Sport, sport_slug='mens-handball')
     now = datetime.datetime.now()
     allow_change = True
-    if 17 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 17 < now.day:
         allow_change = False
     elif 17 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True 
         
@@ -593,14 +595,14 @@ def selection_show_jumping(request):
     sport = get_object_or_404(Sport, sport_slug='show-jumping')
     now = datetime.datetime.now()
     allow_change = True
-    if 19 < now.day:
+    if 7 == now.month:
+        allow_change = True
+    elif 19 < now.day:
         allow_change = False
     elif 19 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False
-    elif 7 == now.month:
-        allow_change = True
     else:
         allow_change = True    
     if request.method == "POST":
