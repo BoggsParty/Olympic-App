@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'UserSelections',
     'Main',
     'Rankings',
+    'import_export',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -123,5 +124,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
+
+STATIC_ROOT = "/var/www/jkuzel_pythonanywhere_com_wsgi.py"
 
 STATIC_URL = '/static/'

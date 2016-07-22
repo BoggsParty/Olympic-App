@@ -1,11 +1,20 @@
 from django.contrib import admin
+from import_export import resources
+from import_export.admin import ImportExportModelAdmin
 from .models import eventingSelection, eventingOptions, womens_all_around_gymnasticsSelection, womens_all_around_gymnasticsOptions, mens_all_around_gymnasticsSelection, mens_all_around_gymnasticsOptions, womens_track_4x100_relaySelection, womens_track_4x100_relayOptions, mens_track_4x100_relaySelection, mens_track_4x100_relayOptions, womens_decathalonSelection, womens_decathalonOptions, mens_decathalonSelection, mens_decathalonOptions, womens_swimming_4x100_medley_relaySelection, womens_swimming_4x100_medley_relayOptions, mens_swimming_4x100_medley_relaySelection, mens_swimming_4x100_medley_relayOptions, womens_swimming_200m_backstrokeSelection, womens_swimming_200m_backstrokeOptions, mens_swimming_1500m_freestyleSelection, mens_swimming_1500m_freestyleOptions, mens_golfSelection, mens_golfOptions, womens_basketballSelection, womens_basketballOptions, womens_soccerSelection, womens_soccerOptions, mens_soccerSelection, mens_soccerOptions, womens_beach_volleyballSelection, womens_beach_volleyballOptions, mens_waterpoloSelection, mens_waterpoloOptions, womens_bmxSelection, womens_bmxOptions, mens_bmxSelection, mens_bmxOptions, mens_handballSelection, mens_handballOptions, show_jumpingSelection, show_jumpingOptions
 
 class eventingSelectionAdmin(admin.ModelAdmin):
     list_display = ('user', 'sport_name',)
 admin.site.register(eventingSelection, eventingSelectionAdmin)
 
-admin.site.register(eventingOptions)
+class eventingOptionsResource(resources.ModelResource):
+    class Meta:
+        model = eventingOptions
+        
+class eventingOptionsAdmin(ImportExportModelAdmin):
+    pass
+
+admin.site.register(eventingOptions, eventingOptionsAdmin)
 
 class womens_all_around_gymnasticsSelectionAdmin(admin.ModelAdmin):
     list_display = ('user', 'sport_name',)
