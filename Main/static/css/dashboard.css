@@ -47,6 +47,14 @@ p {
     font-size: 200%;
     padding: 0px 50px;
 }
+
+#ul1 {
+    color: #4c4b44;
+    font-size: 16pt;
+    list-style-type: none;
+    padding: 0px 50px;
+}
+
 a {
     color: #008040;
     font-family: Georgia, serif;

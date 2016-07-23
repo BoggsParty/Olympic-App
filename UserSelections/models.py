@@ -147,7 +147,7 @@ class mens_swimming_1500m_freestyleOptions (models.Model):
         return self.athlete_name
 
 class mens_swimming_1500m_freestyleSelection (models.Model):
-    sport_name = models.CharField(max_length=200, default='mens-swimming-200m-freestyle')
+    sport_name = models.CharField(max_length=200, default='mens-swimming-200m-IM')
     user = models.ForeignKey('auth.User', blank=True, null=True)
     place = models.CharField(max_length=200, default='none')
     gold = models.ForeignKey(mens_swimming_1500m_freestyleOptions,blank=True, null=True, related_name = 'gold+')

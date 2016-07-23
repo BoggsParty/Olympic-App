@@ -302,14 +302,14 @@ def selection_womens_swimming_200m_backstroke(request):
 
 def selection_mens_swimming_1500m_freestyle(request):
     userselection = mens_swimming_1500m_freestyleSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
-    sport = get_object_or_404(Sport, sport_slug='mens-swimming-200m-freestyle')
+    sport = get_object_or_404(Sport, sport_slug='mens-swimming-200m-IM')
     now = datetime.datetime.now()
     allow_change = True
     if 7 == now.month:
         allow_change = True
-    elif 7 < now.day:
+    elif 10 < now.day:
         allow_change = False
-    elif 7 == now.day and 0 <= now.hour:
+    elif 10 == now.day and 0 <= now.hour:
         allow_change = False
     elif 8 < now.month:
         allow_change = False

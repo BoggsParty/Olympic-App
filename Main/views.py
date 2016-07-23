@@ -106,7 +106,7 @@ def view_all_11(request):
 
 @login_required
 def view_all_12(request):
-    mens_swimming_1500m_freestyle = mens_swimming_1500m_freestyleSelection.objects.filter(sport_name='mens-swimming-200m-freestyle').exclude(user__isnull=True)
+    mens_swimming_1500m_freestyle = mens_swimming_1500m_freestyleSelection.objects.filter(sport_name='mens-swimming-200m-im').exclude(user__isnull=True)
     return render(request, 'Main/sportsviewall/viewall12.html', {'mens_swimming_1500m_freestyle':mens_swimming_1500m_freestyle})
     
 @login_required
