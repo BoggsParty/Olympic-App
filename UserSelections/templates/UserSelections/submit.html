@@ -6,16 +6,16 @@
 
         <div>
             <h2>Your current guesses:</h2>
-                <br><p><b>Gold-</b></p>
+                <p><b>Gold-</b></p>
                     <p>{{ userselection.gold }}</p>
-                <br><p><b>Silver-</b></p>
+                <p><b>Silver-</b></p>
                     <p>{{ userselection.silver }}</p>
-                <br><p><b>Bronze-</b></p>
+                <p><b>Bronze-</b></p>
                     <p>{{ userselection.bronze }}</p>
         </div>
 
             <form method="POST" class="post-form">{% csrf_token %}
-                <br><p id="p2">{{ form }}</p></br>
+                <br><p id="p2">{{ form }}</p>
             <p id="p2"><button type="submit" class="save btn btn-default">Save</button></p>
             </form>
     {% else %}
