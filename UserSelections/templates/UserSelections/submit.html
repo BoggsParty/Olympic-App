@@ -15,7 +15,7 @@
         </div>
 
             <form method="POST" class="post-form">{% csrf_token %}
-                {{ form.as_ul }}
+                <br><p id="p2">{{ form }}</p></br>
             <p id="p2"><button type="submit" class="save btn btn-default">Save</button></p>
             </form>
     {% else %}
