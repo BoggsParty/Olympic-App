@@ -3,10 +3,9 @@
 {% block content %}
     <body>
         <div class="page-wrap">
-            <div align="center">
+            <div id="dashboard">
                 <h1>Current Rankings</h1>
-            </div>
-            <div align="center">
+
                 <table id="table1" style="width:35%">
                     <tr id="tr1">
                         <td id="td1"><p><u>Username</u></p></td>
@@ -20,6 +19,21 @@
                     {% endfor %}                
                 </table>
             </div>
+            <div id="dashboardcommenthead">
+                <h1>Comments</h1>
+                <a id="commentslink" href="/comments/all">Click here to reply or view all</a>
+            </div>
+            <div id="dashboardcomments">
+            {% if show_comments %}  
+                <div>
+                    {% for comments in comments %}
+                        <br><b><p>{{ comments.user }}</b><br>{{ comments.date_created }}</p>
+                        <p id="comments">{{ comments.comment }}</p>
+                    {% endfor %}
+                </div>
+            {% else %}
+            {% endif %}
+            </div>    
         </div>
     </body>
       

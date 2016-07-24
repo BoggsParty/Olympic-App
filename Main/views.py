@@ -7,10 +7,11 @@ from django.contrib.auth.models import User
 from .forms import UserForm, PasswordForm, LostUserNameForm, SuggestionsForm
 from Rankings.forms import RankingsForm
 from UserSelections.models import eventingSelection, womens_all_around_gymnasticsSelection, mens_all_around_gymnasticsSelection, womens_track_4x100_relaySelection, mens_track_4x100_relaySelection, womens_decathalonSelection, mens_decathalonSelection, womens_swimming_4x100_medley_relaySelection, mens_swimming_4x100_medley_relaySelection, womens_swimming_200m_backstrokeSelection, mens_swimming_1500m_freestyleSelection, mens_golfSelection, womens_basketballSelection, womens_soccerSelection, mens_soccerSelection, womens_beach_volleyballSelection, mens_waterpoloSelection, womens_bmxSelection, mens_bmxSelection, mens_handballSelection, show_jumpingSelection
-from Rankings.models import Ranking
+from Rankings.models import Ranking, Comments, Comments_On
 from CountryInfo.models import Sport
 from django.utils import timezone
 import datetime
+from django.core.mail import send_mail
 from django.db.models import Q
 
 
@@ -153,7 +154,14 @@ def view_all_20(request):
 def dashboard(request):
     user = Ranking.objects.all().order_by('-score')
     sport = Sport.objects.order_by('order')
-    return render(request, 'Main/dashboard.html', {'user': user, 'sport': sport})
+    comments = Comments.objects.order_by('-id')[:10]
+    show_comments = True
+    comment_boolean = Comments_On.objects.latest('pk')
+    if comment_boolean.comments_on:
+        show_comments = True
+    else:
+        show_comments = False 
+    return render(request, 'Main/dashboard.html', {'user': user, 'sport': sport, 'comments':comments, 'show_comments':show_comments})
 
 @login_required
 def adduser(request):    
@@ -189,7 +197,15 @@ def reset_password(request):
             record = form.save(commit=False)
             record.date = timezone.now()
             record.save()
+            #send_mail(
+                #subject='password reset request',
+                #message='check admin for password reset request',
+                #from_email='julia.kuzel@gmail.com',
+                #recipient_list=['julia.kuzel@gmail.com'],
+                #fail_silently=False,
+            #)
             return redirect ('password_confirmation')
+            
     else:
         form = PasswordForm()
     return render(request, 'registration/password_reset1.html', {'form': form}) 

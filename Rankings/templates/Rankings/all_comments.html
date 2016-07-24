@@ -1,0 +1,20 @@
+{% extends 'Main/header.html' %}
+{% block content %}
+    {% if show_comments %}  
+        <div id="section4">
+            <h2>Add Comment</h2>
+            <form method="POST" class="post-form">{% csrf_token %}
+                <p id="p4"><br>{{ form.as_p }}</br></p>
+            <p id="p2"><button type="submit" class="save btn btn-default">Save</button></p>
+            </form>
+        </div>
+        <div>
+            <h2>All Comments</h2>
+            {% for comments in comments %}
+                <br><b><p>{{ comments.user }}</b><br>{{ comments.date_created }}</p>
+                <p id="comments">{{ comments.comment }}</p>
+            {% endfor %}
+
+    {% else %}
+    {% endif %}
+{% endblock %}

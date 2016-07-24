@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 class Ranking(models.Model):
     user = models.ForeignKey('auth.User')
@@ -10,6 +11,15 @@ class Ranking(models.Model):
 	       
     #def __str__(self):
         #return self.user
+        
+class Comments_On(models.Model):
+    comments_on = models.BooleanField(default=True)
+    
+class Comments(models.Model):
+    user = models.ForeignKey('auth.User')
+    date_created = models.DateTimeField(default=timezone.now)
+    comment = models.TextField(max_length=1000)
+    
         
 
 
