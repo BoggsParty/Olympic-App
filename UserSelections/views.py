@@ -322,7 +322,7 @@ def selection_mens_swimming_1500m_freestyle(request):
             selection = form.save(commit=False)
             selection.user = request.user
             selection.save()
-            return redirect ('/sports/mens-swimming-200m-freestyle/')
+            return redirect ('/sports/mens-swimming-200m-IM/')
 
     else:
         form = mens_swimming_1500m_freestyleSelectionForm()
