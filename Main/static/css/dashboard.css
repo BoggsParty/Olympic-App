@@ -211,6 +211,12 @@ html, body {
     width: 30%;
     overflow: hidden;
 }
+#dashboard2 {
+    margin: 10px 0px 10px 10%;
+    float: center;
+    width: 30%;
+    overflow: hidden;
+}
 #dashboardcommenthead {
     margin: 0px 10% 0px 0px;
     float: right;

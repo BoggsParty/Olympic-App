@@ -3,6 +3,7 @@
 {% block content %}
     <body>
         <div class="page-wrap">
+            {% if show_comments %}
             <div id="dashboard">
                 <h1>Current Rankings</h1>
 
@@ -24,7 +25,7 @@
                 <a id="commentslink" href="/comments/all">Click here to reply or view all</a>
             </div>
             <div id="dashboardcomments">
-            {% if show_comments %}  
+  
                 <div>
                     {% for comments in comments %}
                         <br><b><p>{{ comments.user }}</b><br>{{ comments.date_created }}</p>
@@ -32,6 +33,22 @@
                     {% endfor %}
                 </div>
             {% else %}
+            <div id="dashboard2">
+                <h1>Current Rankings</h1>
+
+                <table id="table1" style="width:35%">
+                    <tr id="tr1">
+                        <td id="td1"><p><u>Username</u></p></td>
+                        <td id="td1"><p><u>Score</u></p></td>
+                    </tr>
+                    {% for user in user %}                
+                    <tr id="tr1">
+                        <td id="td1"><p>{{ user.username }}</p></td> 
+                        <td id="td1"><p>{{user.score}}</p></td>
+                    </tr>
+                    {% endfor %}                
+                </table>
+            </div>
             {% endif %}
             </div>    
         </div>
