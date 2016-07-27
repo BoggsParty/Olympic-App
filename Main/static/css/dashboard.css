@@ -58,10 +58,12 @@ a {
 .left {
     float:left;
     position:relative;
+    clear: both;
 }
 .right {
     float:right;
     position:relative;
+    clear: both;
 }
 .width {
     width: 100%;
