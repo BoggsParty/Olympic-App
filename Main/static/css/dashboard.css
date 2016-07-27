@@ -56,11 +56,12 @@ a {
 }
 
 .left {
-    float:right;
+    float:left;
     position:relative;
 }
 .right {
     float:right;
+    position:relative;
 }
 .width {
     width: 100%;
