@@ -56,10 +56,10 @@ a {
 }
 
 .left {
-    float: left;
+    float:left;
 }
 .right {
-    float: right;
+    float:right;
 }
 .width {
     width: 50%;
