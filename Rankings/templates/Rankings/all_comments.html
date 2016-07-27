@@ -11,10 +11,14 @@
         <div>
             <h2>All Comments</h2>
             {% for comments in comments %}
-                <br><b><p>{{ comments.user }}</b><br>{{ comments.date_created }}</p>
-                <p id="comments">{{ comments.comment }}</p>
-            {% endfor %}
-
-    {% else %}
+            <div id="allcommentsmargin">
+                <br>
+                    <p><b>{{comments.user}}</b> {{comments.date_created}}</p>
+                    <div id="comments">
+                        <br>{{comments.comment}}
+                    </div>
+            </div>
+            {% endfor %}  
+            {% else %}
     {% endif %}
 {% endblock %}

@@ -5,18 +5,16 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
         <div class="nav">
-        <ul>
-            <li><a class="left" href="/about/">About</a></li>
-            <li><a class="left" href="/">Rankings</a></li>
-            <li><a class="left" href="/sports/">Sports</a></li>
-            <li><a class="left" href="/view-all/">View All Guesses</a></li>
-            <li><a class="right" href="/logout/">Logout</a></li>
-            <li><a class="right" target="_blank" href="/password_change/">Change Password</a></li>
-        </ul>           
+            <ul>
+                <li><a class="left" href="/about/">About</a></li>
+                <li><a class="left" href="/">Rankings</a></li>
+                <li><a class="left" href="/sports/">Sports</a></li>
+                <li><a class="left" href="/view-all/">View All Guesses</a></li>
+                <li><a class="right" href="/logout/">Logout</a></li>
+                <li><a class="right" target="_blank" href="/password_change/">Change Password</a></li>
+            </ul>           
         </div> 
     </head>
-    <body>
     {% block content %}
     {% endblock %}  
-    </body>
 </html>
