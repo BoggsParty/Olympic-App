@@ -57,6 +57,7 @@ a {
 
 .left {
     float:right;
+    position:relative;
 }
 .right {
     float:right;
