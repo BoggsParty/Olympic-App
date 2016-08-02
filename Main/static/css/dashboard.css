@@ -47,6 +47,19 @@ p {
     font-size: 200%;
     padding: 0px 50px;
 }
+#calendargreen {
+    color:#008040;
+    font-family: sans-serif;
+    font-size: 200%;
+    text-align: center;
+}
+
+#calendarred {
+    color:#bb3344;
+    font-family: sans-serif;
+    font-size: 200%;
+    text-align: center;
+}
 a {
     color: #008040;
     font-family: Georgia, serif;

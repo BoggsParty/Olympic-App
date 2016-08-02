@@ -154,7 +154,7 @@ def view_all_20(request):
 def dashboard(request):
     user = Ranking.objects.all().order_by('-score')
     sport = Sport.objects.order_by('order')
-    comments = Comments.objects.order_by('-id')[:10]
+    comments = Comments.objects.order_by('-id')[:3]
     show_comments = True
     comment_boolean = Comments_On.objects.latest('pk')
     if comment_boolean.comments_on:
