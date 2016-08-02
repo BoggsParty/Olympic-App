@@ -7,7 +7,8 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
 url(r'^$', views.dashboard, name='dashboard'),
 url(r'^view-all/$', views.view_all, name='view_all'),
-url(r'^view-all/eventing', views.view_all_1, name='view_all_1'),
+url(r'^calendar/$', views.calendar, name='calendar'),
+#url(r'^view-all/eventing', views.view_all_1, name='view_all_1'),
 #url(r'^view-all/show-jumping', views.view_all_2, name='view_all_2'),
 #url(r'^view-all/womens-beach-volleyball', views.view_all_3, name='view_all_3'),
 #url(r'^view-all/mens-waterpolo', views.view_all_4, name='view_all_4'),

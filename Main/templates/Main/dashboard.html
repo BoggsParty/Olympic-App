@@ -2,81 +2,58 @@
 
 {% block content %}
     <body>
-        <div class="page-wrap">
-            {%if show_comments %}
-            <div>
-                <div class="left">
-                    <div class="width">
-                        <div id="rankingmargin">
-                            <div class="overflowauto">
-                                <h1>Current Rankings</h1>
+        {% if show_comments %}
+                    <div class="leftcomments">
+                        <h1>Current Rankings</h1>
 
-                                <table id="table1" style="width:35%">
-                                    <tr id="tr1">
-                                        <td id="td1"><p><u>Username</u></p></td>
-                                        <td id="td1"><p><u>Score</u></p></td>
-                                    </tr>
-                                    {% for user in user %}                
-                                    <tr id="tr1">
-                                        <td id="td1"><p>{{ user.username }}</p></td> 
-                                        <td id="td1"><p>{{user.score}}</p></td>
-                                    </tr>
-                                    {% endfor %}                
-                                </table> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="width">
-                    <div class="height">
-                        <div id="commentsmargin">
-                            <div class="right">
-                                <div align="center">
-                                    <h1 id="h1comments">Comments</h1>
-                                    <a id="acomments" href="comments/all">Click here to reply and view all</a>
-                                </div>
-                            </div>
-                            <div class="right">
-                                {% for comments in comments %}
-                                    <br>
-                                    <p><b>{{comments.user}}</b> {{comments.date_created}}</p>
-                                        <div id="comments">
-                                            <br>{{comments.comment}}
-                                        </div>
-                                {% endfor %} 
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% else %}
-                <div align="center">
-                    <h1>Current Rankings</h1>
-
-                    <table id="table1" style="width:35%">
+                        <table id="table1" style="width:35%">
                         <tr id="tr1">
                             <td id="td1"><p><u>Username</u></p></td>
                             <td id="td1"><p><u>Score</u></p></td>
                         </tr>
-                        {% for user in user %}                
+                        {% for user in user %}
                         <tr id="tr1">
-                            <td id="td1"><p>{{ user.username }}</p></td> 
+                            <td id="td1"><p>{{ user.username }}</p></td>
                             <td id="td1"><p>{{user.score}}</p></td>
                         </tr>
-                        {% endfor %}                
-                    </table>
+                    {% endfor %}
+                        </table>
+                    </div>
                 </div>
-            {% endif %}
-        </div>
-    </body>
-      
-        <footer class="site-footer">
-            <div align="center">
-                {% for sport in sport %}
-                    <a id="link4" href="/sports/{{sport.sport_slug}}/"> {{sport.sport_name}} | </a>
-                {% endfor %}
             </div>
-        </footer>  
-        
+                {% for comments in comments %}
+                <div class="rightcomments">
+                    <br>
+                        <p><b>{{comments.user}}</b> {{comments.date_created}}</p>
+                            <div id="comments">
+                                <br>{{comments.comment}}
+                            </div>
+                </div>
+                {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% else %}
+            <div align="center">
+                <h1>Current Rankings</h1>
+
+                <table id="table1" style="width:35%">
+                    <tr id="tr1">
+                        <td id="td1"><p><u>Username</u></p></td>
+                        <td id="td1"><p><u>Score</u></p></td>
+                    </tr>
+                    {% for user in user %}
+                    <tr id="tr1">
+                        <td id="td1"><p>{{ user.username }}</p></td>
+                        <td id="td1"><p>{{user.score}}</p></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        {% endif %}
+    </body>
+
+
 {% endblock %}

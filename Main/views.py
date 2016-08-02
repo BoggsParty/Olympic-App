@@ -213,6 +213,9 @@ def reset_password(request):
 def password_confirmation(request):
     return render(request, 'registration/create_account_success.html')
 
+def calendar(request):
+    return render(request, 'Main/calendar.html')
+    
 def retrieve_username(request):
     if request.method == "POST":
         form = LostUserNameForm(request.POST)
