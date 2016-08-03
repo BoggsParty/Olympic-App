@@ -14,15 +14,5 @@ def all_comments(request):
         show_comments = True
     else:
         show_comments = False 
-    if request.method == "POST":
-        form = CommentsForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.user = request.user
-            comment.date_created = timezone.now()
-            comment.save()
-            return redirect ('/comments/all')
-    else:
-        form = CommentsForm()
-    return render(request, 'Rankings/all_comments.html', {'form': form, 'comments': comments, 'show_comments':show_comments})
+    return render(request, 'Rankings/all_comments.html', {'comments': comments, 'show_comments':show_comments})
             
