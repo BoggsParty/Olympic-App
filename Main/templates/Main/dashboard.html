@@ -21,10 +21,16 @@
                     </div>
                 </div>
             </div>
+            <div>
+                <div class="rightcomments">
+                    <h3>Julia's Commentary</h3>
+                    <a id="link3" href="/news/all"><b>Click here to view all commentary</b></a>
+                </div>
+            </div>
                 {% for comments in comments %}
                 <div class="rightcomments">
                     <br>
-                        <p><b>{{comments.user}}</b> {{comments.date_created}}</p>
+                        <p>{{comments.date_created}}</p>
                             <div id="comments">
                                 <br>{{comments.comment}}
                             </div>

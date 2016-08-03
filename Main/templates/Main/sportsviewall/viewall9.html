@@ -2,9 +2,18 @@
 
 {% block content %}
 <html>
-    <body>
+    <body
+        {% if allow_change %}
+        <h1>All guesses will be visible when guessing locks</h2>
+        <a id="link1" href="/view-all/">Go Back</a>
+        {% else %}
         <div align="center">
             <h1>Women's Swimming 4x100m Medley Relay</h1>
+        </div>
+        <div align="center">  
+            <p id="p6"><b>Gold-</b>{{sport.gold}}</p>
+            <p id="p6"><b>Silver-</b>{{sport.silver}}</p>
+            <p id="p6"><b>Bronze-</b>{{sport.bronze}}</p>
         </div>
         <div align="left">
                 <table style="width 100%">                  
@@ -16,6 +25,7 @@
                     <td><p><b>Bronze-</b> {{ womens_swimming_4x100_medley_relay.bronze }}</p></td></tr>
                     {% endfor %}
         </div>
+        {% endif %}
     </body>
 </html>
 {% endblock %}

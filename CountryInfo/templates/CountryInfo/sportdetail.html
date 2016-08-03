@@ -28,8 +28,17 @@
             <p><b>Bronze-</b></p>
                 <p>{{ userselection.bronze }}</p>
     </div>
+    {% if allow_change %}
     <div>
         <p><a href="/submit/{{sport.sport_slug}}/">Click Here to Submit or Change Guess</a></p>
     </div>
+    {% else %}
+    <div>
+        <h3>Winners</h3>
+        <p><b>Gold-</b>{{sport.gold}}</p>
+        <p><b>Silver-</b>{{sport.silver}}</p>
+        <p><b>Bronze-</b>{{sport.bronze}}</p>
+    </div>
+    {% endif %}
 
 {% endblock %}

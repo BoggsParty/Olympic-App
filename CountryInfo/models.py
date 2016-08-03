@@ -27,6 +27,9 @@ class Sport(models.Model):
     source_text = models.CharField(max_length=200, blank=True, default='')
     view_rankings = models.CharField(max_length=200, blank=True, default='')
     rankings_link = models.URLField(max_length=200, blank=True, default='')
+    gold = models.CharField(max_length=200, blank=True, default='TBD')
+    silver = models.CharField(max_length=200, blank=True, default='TBD')
+    bronze = models.CharField(max_length=200, blank=True, default='TBD')
     def __str__(self):
         return self.sport_name
         

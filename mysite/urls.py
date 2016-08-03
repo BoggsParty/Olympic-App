@@ -23,5 +23,5 @@ urlpatterns = [
     url(r'^sports/', include('CountryInfo.urls')),
     url(r'^submit/', include('UserSelections.urls')),
     url(r'^accounts/login/$', auth_views.login),
-    url(r'^comments/', include('Rankings.urls'))
+    url(r'^news/', include('Rankings.urls'))
 ]

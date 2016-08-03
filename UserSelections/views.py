@@ -299,7 +299,6 @@ def selection_womens_swimming_200m_backstroke(request):
     return render(request, 'UserSelections/submit.html', {'form': form, 'sport': sport, 'userselection': userselection, 'allow_change': allow_change})
 
 @login_required
-
 def selection_mens_swimming_1500m_freestyle(request):
     userselection = mens_swimming_1500m_freestyleSelection.objects.filter(Q(user=request.user) | Q(user__isnull=True)).latest('date_created')
     sport = get_object_or_404(Sport, sport_slug='mens-swimming-200m-IM')
