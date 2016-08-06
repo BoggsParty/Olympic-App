@@ -309,7 +309,7 @@ def view_all_1(request):
     allow_change = True
     if 7 == now.month:
         allow_change = True
-    elif 1 < now.day:
+    elif 6 < now.day:
         allow_change = False
     elif 6 == now.day:
         allow_change = False

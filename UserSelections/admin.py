@@ -8,127 +8,128 @@ class eventingSelectionResource(resources.ModelResource):
     class Meta:
         model = eventingSelection     
 class eventingSelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(eventingSelection, eventingSelectionAdmin)
 
 class womens_all_around_gymnasticsSelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class womens_all_around_gymnasticsSelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(womens_all_around_gymnasticsSelection, womens_all_around_gymnasticsSelectionAdmin)
 
 class mens_all_around_gymnasticsSelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class mens_all_around_gymnasticsSelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(mens_all_around_gymnasticsSelection, mens_all_around_gymnasticsSelectionAdmin)
 
 class womens_track_4x100_relaySelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class womens_track_4x100_relaySelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(womens_track_4x100_relaySelection, womens_track_4x100_relaySelectionAdmin)
 
 class mens_track_4x100_relaySelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class mens_track_4x100_relaySelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(mens_track_4x100_relaySelection, mens_track_4x100_relaySelectionAdmin)
 
 class womens_decathalonSelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class womens_decathalonSelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(womens_decathalonSelection, womens_decathalonSelectionAdmin)
 
 class mens_decathalonSelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class mens_decathalonSelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(mens_decathalonSelection, mens_decathalonSelectionAdmin)
 
 class womens_swimming_4x100_medley_relaySelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class womens_swimming_4x100_medley_relaySelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(womens_swimming_4x100_medley_relaySelection, womens_swimming_4x100_medley_relaySelectionAdmin)
 
 class mens_swimming_4x100_medley_relaySelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class mens_swimming_4x100_medley_relaySelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(mens_swimming_4x100_medley_relaySelection, mens_swimming_4x100_medley_relaySelectionAdmin)
 
 class womens_swimming_200m_backstrokeSelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class womens_swimming_200m_backstrokeSelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(womens_swimming_200m_backstrokeSelection, womens_swimming_200m_backstrokeSelectionAdmin)
 
 class mens_swimming_1500m_freestyleSelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class mens_swimming_1500m_freestyleSelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(mens_swimming_1500m_freestyleSelection, mens_swimming_1500m_freestyleSelectionAdmin)
 
 class mens_golfSelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class mens_golfSelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(mens_golfSelection, mens_golfSelectionAdmin)
 
 class womens_basketballSelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class womens_basketballSelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(womens_basketballSelection, womens_basketballSelectionAdmin)
 
 class womens_soccerSelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class womens_soccerSelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(womens_soccerSelection, womens_soccerSelectionAdmin)
 
 class mens_soccerSelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class mens_soccerSelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(mens_soccerSelection, mens_soccerSelectionAdmin)
 
 class womens_beach_volleyballSelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class womens_beach_volleyballSelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(womens_beach_volleyballSelection, womens_beach_volleyballSelectionAdmin)
 
 class mens_waterpoloSelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class mens_waterpoloSelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(mens_waterpoloSelection, mens_waterpoloSelectionAdmin)
 
 class womens_bmxSelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class womens_bmxSelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(womens_bmxSelection, womens_bmxSelectionAdmin)
 
 class mens_bmxSelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class mens_bmxSelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(mens_bmxSelection, mens_bmxSelectionAdmin)
 
 class mens_handballSelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class mens_handballSelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(mens_handballSelection, mens_handballSelectionAdmin)
 
 class show_jumpingSelectionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'sport_name',)
-class show_jumpingSelectionAdmin(ImportExportModelAdmin):
+    list_display = ('user', 'sport_name','date_created',)
+    ordering = ('user','-date_created',)
     pass
 admin.site.register(show_jumpingSelection, show_jumpingSelectionAdmin)
 
