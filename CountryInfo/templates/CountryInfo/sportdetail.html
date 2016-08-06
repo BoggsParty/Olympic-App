@@ -44,47 +44,4 @@
     </div>
     {% endif %}
 
-{% endblock %}{% extends 'Main/header.html' %}
-
-{% block content %}
-
-    <div>
-        <h1>What is {{ sport.sport_name }}?</h1>
-            <p>{{ sport.sport_description|linebreaks }}</p>
-        <h2>How is the winner chosen?</h2>
-            <p>{{ sport.scoring|linebreaks }}</p>
-        <h2>Who's going to win?</h2>
-            <p>{{ sport.favorite|linebreaks }}</p>
-            <a id="link2" href="{{ sport.rankings_link }}">{{ sport.view_rankings }}</a>
-
-        <h2>When to watch</h2>
-            <p>{{ sport.competition_dates|linebreaks }}</p>
-    </div>
-
-    <div id="section3">
-        <img src="{{sport.image}}" alt="">
-        <p id="p3">Photo courtesy of <a id="link5" href="{{sport.source_link}}">{{ sport.source_text }}</a> without modification under CC.</p>
-    </div>
-    <div>
-        <h1>Your current guesses:</h1>
-            <p><b>Gold-</b></p>
-                <p>{{ userselection.gold }}</p>
-            <p><b>Silver-</b></p>
-                <p>{{ userselection.silver }}</p>
-            <p><b>Bronze-</b></p>
-                <p>{{ userselection.bronze }}</p>
-    </div>
-    {% if allow_change %}
-    <div>
-        <p><a href="/submit/{{sport.sport_slug}}/">Click Here to Submit or Change Guess</a></p>
-    </div>
-    {% else %}
-    <div>
-        <h3>Winners</h3>
-        <p><b>Gold-</b>{{sport.gold}}</p>
-        <p><b>Silver-</b>{{sport.silver}}</p>
-        <p><b>Bronze-</b>{{sport.bronze}}</p>
-    </div>
-    {% endif %}
-
 {% endblock %}
